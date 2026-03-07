@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>პროექტები — CCTV და უსაფრთხოების ინსტალაცია | Smart Security</title>
+  <meta name="description" content="Smart Security-ის 500+ პროექტი — CCTV, სიგნალიზაცია, სახანძრო, ელ. საკეტები. ოფისი, სახლი, სავაჭრო ცენტრი, საწარმო. ნახე Before/After."/>
+  <meta name="keywords" content="CCTV ინსტალაცია საქართველო, Smart Security პროექტები, უსაფრთხოება ოფისი, CCTV სახლი, სიგნალიზაცია ბიზნესი"/>
+  <link rel="canonical" href="https://smartsecurity.com.ge/portfolio.html"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Smart Security — ჩვენი პროექტები",
+    "description": "500+ ინსტ. პ. სრ. საქ-ში",
+    "numberOfItems": 500,
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"CCTV სისტემა საოფისე კომპლექსი — ვაკე, თბ."},
+      {"@type":"ListItem","position":2,"name":"Ajax სიგნ. ბინა — საბ., თბ."},
+      {"@type":"ListItem","position":3,"name":"სახ. + CCTV სავ. ცენ. — ბ-ი"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="icon" href="assets/favicon.svg"/>
+
+  <style>
+    /* Filter tabs */
+    .filter-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:36px; }
+    .filter-btn { background:var(--panel); border:1px solid rgba(0,200,255,0.15); color:var(--muted); padding:9px 20px; border-radius:100px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.3s; }
+    .filter-btn.active, .filter-btn:hover { background:rgba(0,102,255,0.15); border-color:var(--accent); color:var(--white); }
+
+    /* Project grid */
+    .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:28px; margin-top:50px; }
+    .project-card { background:var(--panel); border:1px solid rgba(0,200,255,0.08); border-radius:var(--radius-xl); overflow:hidden; transition:all 0.35s; }
+    .project-card:hover { border-color:rgba(0,200,255,0.3); transform:translateY(-5px); box-shadow:var(--shadow-card); }
+    .project-visual { height:200px; background:linear-gradient(135deg,var(--steel),var(--dark)); display:flex; align-items:center; justify-content:center; font-size:72px; position:relative; overflow:hidden; }
+    .project-visual::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,rgba(13,28,46,0.85) 0%,transparent 55%); }
+    .project-badges { position:absolute; bottom:14px; left:16px; z-index:1; display:flex; gap:6px; flex-wrap:wrap; }
+    .p-badge { background:rgba(0,102,255,0.85); backdrop-filter:blur(4px); color:white; font-size:11px; font-weight:700; padding:3px 10px; border-radius:100px; letter-spacing:0.5px; }
+    .p-badge.green { background:rgba(0,200,118,0.85); }
+    .project-body { padding:22px 24px; }
+    .project-title { font-size:17px; font-weight:700; color:var(--white); margin-bottom:6px; line-height:1.4; }
+    .project-meta { display:flex; gap:16px; font-size:12px; color:var(--muted); margin-bottom:12px; flex-wrap:wrap; }
+    .project-desc { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:16px; }
+    .project-specs { display:flex; flex-wrap:wrap; gap:6px; }
+    .p-spec { background:rgba(0,200,255,0.05); border:1px solid rgba(0,200,255,0.15); border-radius:100px; padding:3px 10px; font-size:11px; color:var(--accent); font-weight:600; }
+
+    /* Stats bar */
+    .stats-bar { background:var(--steel); border-radius:var(--radius-xl); padding:36px 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:28px; margin-top:50px; }
+    .stat-item { text-align:center; }
+    .stat-num { font-family:var(--font-display); font-size:36px; font-weight:900; color:var(--accent); }
+    .stat-lbl { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:2px; margin-top:6px; }
+
+    /* Testimonial inside portfolio */
+    .p-quote { background:linear-gradient(135deg,rgba(0,102,255,0.08),rgba(0,200,255,0.04)); border:1px solid rgba(0,200,255,0.1); border-radius:var(--radius-lg); padding:22px; margin-top:16px; }
+    .p-quote p { font-size:13px; color:var(--muted); line-height:1.7; font-style:italic; margin-bottom:10px; }
+    .p-quote-author { font-size:12px; font-weight:600; color:var(--accent); }
+
+    @media(max-width:700px){ .projects-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="closeMobileNav()">✕</button>
+  <a href="index.html">მთ.</a>
+  <a href="index.html#services">სერ.</a>
+  <a href="portfolio.html" style="color:var(--accent)">პ-ბი</a>
+  <a href="about.html">ჩ. შ.</a>
+  <a href="index.html#contact">კ-ი</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Smart Security" style="height:38px;width:auto"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html">მთ.</a></li>
+    <li><a href="index.html#services">სერ.</a></li>
+    <li><a href="portfolio.html" style="color:var(--accent)">პ-ბი</a></li>
+    <li><a href="about.html">ჩ. შ.</a></li>
+    <li><a href="blog/index.html">ბლ.</a></li>
+    <li><a href="index.html#contact">კ-ი</a></li>
+    <li><a href="tel:+995595708300" class="nav-cta">📞</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Hero -->
+<section style="padding:110px 40px 60px;background:var(--dark);border-bottom:1px solid rgba(0,200,255,0.08)">
+  <div class="container">
+    <div class="breadcrumb" style="display:flex;gap:8px;font-size:13px;color:var(--muted);margin-bottom:20px">
+      <a href="index.html" style="color:var(--accent);text-decoration:none">Smart Security</a>
+      <span>›</span><span>პ-ბი</span>
+    </div>
+    <div class="section-label">500+ ი-ი პ-ი</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(30px,4.5vw,52px);font-weight:900;margin-bottom:16px;line-height:1.1">
+      ჩვენი <span style="color:var(--accent)">სამუშაო</span> — ეს<br>ყველაზე კარგი სიტყვებია
+    </h1>
+    <p style="color:var(--muted);font-size:16px;max-width:580px;line-height:1.8">ყოველი პ-ი ი-ი ი-ის ი-ა. ი-ი ი. ფ-ი კ-ის ს-ი, ი-ი-ი ბ., ვ-ი კ-ი — ყ-ი.</p>
+
+    <!-- Stats -->
+    <div class="stats-bar reveal" style="margin-top:40px">
+      <div class="stat-item"><div class="stat-num">500+</div><div class="stat-lbl">პ-ი სულ</div></div>
+      <div class="stat-item"><div class="stat-num">3,200+</div><div class="stat-lbl">კ-ა ი-ა</div></div>
+      <div class="stat-item"><div class="stat-num">98%</div><div class="stat-lbl">კ. კ-ბა</div></div>
+      <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-lbl">Google Rating</div></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filter('all',this)">ყველა</button>
+      <button class="filter-btn" onclick="filter('office',this)">🏢 ოფ./ბიზ.</button>
+      <button class="filter-btn" onclick="filter('home',this)">🏠 სახ./ბინა</button>
+      <button class="filter-btn" onclick="filter('retail',this)">🏪 სავ./რ-ი</button>
+      <button class="filter-btn" onclick="filter('industrial',this)">🏭 საწ./ქ-ა</button>
+      <button class="filter-btn" onclick="filter('fire',this)">🔥 სახ. სის.</button>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section style="padding:60px 40px;background:var(--black)">
+  <div class="container">
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- Project 1 -->
+      <div class="project-card reveal" data-cat="office">
+        <div class="project-visual">🏢
+          <div class="project-badges">
+            <span class="p-badge">CCTV</span>
+            <span class="p-badge green">✓ დ-ი</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">საოფისე კომპლექსი — ვაკე, თბილისი</div>
+          <div class="project-meta"><span>📍 ვ., თბ.</span><span>📅 2024</span><span>⏱ 2 დ-ი</span></div>
+          <p class="project-desc">8 IP კამ. (Hikvision 4MP ColorVu) + 16-ch NVR + RFID წვდ. კ. 3 ო-ი. Cloud ჩ. + სმ. App.</p>
+          <div class="project-specs">
+            <span class="p-spec">8 IP კამ.</span><span class="p-spec">ColorVu</span><span class="p-spec">RFID</span><span class="p-spec">Cloud</span>
+          </div>
+          <div class="p-quote">
+            <p>"ს-ა კ-ა, App-ი ი-ა. ი-ა 2 დ-ში, ყ. მ-ი-ია."</p>
+            <div class="p-quote-author">★★★★★ — ი-ე ბ., Director</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card reveal" data-cat="home">
+        <div class="project-visual">🏠
+          <div class="project-badges">
+            <span class="p-badge">CCTV + Ajax</span>
+            <span class="p-badge green">✓ დ-ი</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">კ. სახ. + ეზო — საბ., თბ.</div>
+          <div class="project-meta"><span>📍 ს-ბ., თბ.</span><span>📅 2024</span><span>⏱ 1 დ-ი</span></div>
+          <p class="project-desc">6 IP CCTV (Wi-Fi + PoE) + Ajax Hub სიგ. (PIR×4, კ/ფ×6, ს-ა) + App ი-ა.</p>
+          <div class="project-specs">
+            <span class="p-spec">6 CCTV</span><span class="p-spec">Ajax Hub</span><span class="p-spec">PIR×4</span><span class="p-spec">App</span>
+          </div>
+          <div class="p-quote">
+            <p>"ახ. ყ-ი-ი გ-ა ი-ი-ია. App-ი ყ-ა ვ. სა-ი-ო-ა."</p>
+            <div class="p-quote-author">★★★★★ — მ-ა ქ., Homeowner</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card reveal" data-cat="retail">
+        <div class="project-visual">🏪
+          <div class="project-badges">
+            <span class="p-badge">CCTV + სახ.</span>
+            <span class="p-badge green">✓ დ-ი</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">სა-ი ც-ი — ბ-ი</div>
+          <div class="project-meta"><span>📍 ბ-ი</span><span>📅 2024</span><span>⏱ 4 დ-ი</span></div>
+          <p class="project-desc">16 IP CCTV (4K PTZ×2 + Dome×14) + სახ. სიგ. (Hochiki, სპ-ი) + CAME შ-ბ. ANPR-ით.</p>
+          <div class="project-specs">
+            <span class="p-spec">16 CCTV</span><span class="p-spec">4K PTZ</span><span class="p-spec">სახ.</span><span class="p-spec">ANPR</span>
+          </div>
+          <div class="p-quote">
+            <p>"ს-ი კ. პ-ი. ყ-ი სიდ-ა. Smart Security — ი-ა."</p>
+            <div class="p-quote-author">★★★★★ — გ-ი ნ., Manager</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card reveal" data-cat="industrial">
+        <div class="project-visual">🏭
+          <div class="project-badges">
+            <span class="p-badge">CCTV + Access</span>
+            <span class="p-badge green">✓ დ-ი</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">ს-ო ო-ი — ქ-ი</div>
+          <div class="project-meta"><span>📍 ქ-ი</span><span>📅 2023</span><span>⏱ 5 დ-ი</span></div>
+          <p class="project-desc">24 IP CCTV (Hikvision DeepinView AI) + ZKTeco ბ-ბ. წ.კ. (200+ ი.) + CAME Full-height შ-ბ.</p>
+          <div class="project-specs">
+            <span class="p-spec">24 CCTV</span><span class="p-spec">AI ანალ.</span><span class="p-spec">ZKTeco</span><span class="p-spec">CAME</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card reveal" data-cat="fire">
+        <div class="project-visual">🔥
+          <div class="project-badges">
+            <span class="p-badge">სახ. სის.</span>
+            <span class="p-badge green">✓ სერ.</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">ს-ო ც-ი — ი-ი, თბ.</div>
+          <div class="project-meta"><span>📍 ი-ი, თბ.</span><span>📅 2024</span><span>⏱ 3 დ-ი</span></div>
+          <p class="project-desc">Bosch FCP × 3 ზ-ა (120 ი.) + კ-ბ. (80) + ს-ა (20) + FM-200 ს-ო ო-ი. სახ. სერ-ი.</p>
+          <div class="project-specs">
+            <span class="p-spec">Bosch FCP</span><span class="p-spec">120 ი.</span><span class="p-spec">FM-200</span><span class="p-spec">სერ.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card reveal" data-cat="home">
+        <div class="project-visual">🏘️
+          <div class="project-badges">
+            <span class="p-badge">IP ი-ი</span>
+            <span class="p-badge green">✓ დ-ი</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">მ-ბ. კ-ი (80 ბ.) — ს-ი</div>
+          <div class="project-meta"><span>📍 ს-ი</span><span>📅 2023</span><span>⏱ 7 დ-ი</span></div>
+          <p class="project-desc">Hikvision SIP IP ი-ი — 1 გ. პ. → 80 ბ. App-ი. RFID კ. + CAME შ-ბ. ა-ი-ი ANPR-ით.</p>
+          <div class="project-specs">
+            <span class="p-spec">SIP</span><span class="p-spec">80 ბ-ა</span><span class="p-spec">RFID</span><span class="p-spec">ANPR</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Load more hint -->
+    <div style="text-align:center;margin-top:50px">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:20px">ნ-ვ 494+ ი-ი პ-ი. დარ. ან WA — ი. ი-ი-ი სა-ი ვ-ჩ. ნ.</p>
+      <a href="index.html#contact" class="btn-primary">ახ. პ-ი დ-ე →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="service-cta-banner">
+  <div class="container">
+    <h2>შ. ო-ი ი-ი პ-ი ი-ო?</h2>
+    <p>უფ. ი-ა — ვ. ობ-ზე მ-ვ. და კ-ა-ს ვ-ვ.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="index.html#contact" class="btn-primary">უფ. კ-ა →</a>
+      <a href="https://wa.me/995595708300" target="_blank" rel="noopener" class="btn-outline">💬 WhatsApp</a>
+      <a href="tel:+995595708300" class="btn-outline">📞 +995 595 70 83 00</a>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--panel);border-top:1px solid rgba(0,200,255,0.1);padding:30px 40px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Smart Security" style="height:32px;width:auto"/></a>
+    <p style="color:var(--muted);font-size:13px">© 2025 Smart Security.</p>
+    <a href="index.html" class="btn-outline" style="padding:10px 20px;font-size:13px">← მთ.</a>
+  </div>
+</footer>
+
+<script src="js/widgets.js"></script>
+<script>
+function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
+window.addEventListener('scroll',()=>{ document.querySelector('nav').style.background=window.scrollY>50?'rgba(5,10,15,0.98)':'rgba(5,10,15,0.9)'; },{passive:true});
+
+function filter(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.project-card[data-cat]').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+  });
+}
+const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
+</script>
+</body>
+</html>

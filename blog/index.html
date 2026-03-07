@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ბლოგი — უსაფრთხოების სისტემები | Smart Security</title>
+  <meta name="description" content="Smart Security-ის ბლოგი — CCTV, სიგნალიზაცია, სახანძრო სისტემები. რჩევები, შედარებები, ფასები საქართველოში."/>
+  <meta name="keywords" content="CCTV ფასი, სიგნალიზაცია ბინისთვის, IP კამერა, უსაფრთხოება სახლი, Smart Security ბლოგი"/>
+  <link rel="canonical" href="https://smartsecurity.com.ge/blog/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/service.css"/>
+  <link rel="icon" href="../assets/favicon.svg"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Smart Security ბლოგი",
+    "url": "https://smartsecurity.com.ge/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Smart Security",
+      "url": "https://smartsecurity.com.ge"
+    }
+  }
+  </script>
+  <style>
+    .blog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:28px; margin-top:50px; }
+    .blog-card { background:var(--panel); border:1px solid rgba(0,200,255,0.08); border-radius:var(--radius-lg); overflow:hidden; transition:all 0.35s; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+    .blog-card:hover { border-color:rgba(0,200,255,0.25); transform:translateY(-4px); box-shadow:var(--shadow-card); }
+    .blog-thumb { height:180px; background:linear-gradient(135deg,var(--steel),var(--dark)); display:flex; align-items:center; justify-content:center; font-size:64px; position:relative; overflow:hidden; }
+    .blog-thumb::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,rgba(13,28,46,0.8) 0%,transparent 60%); }
+    .blog-tag { position:absolute; bottom:12px; left:16px; z-index:1; background:var(--accent2); color:white; font-size:11px; font-weight:700; padding:4px 12px; border-radius:100px; letter-spacing:1px; }
+    .blog-body { padding:24px; flex:1; display:flex; flex-direction:column; }
+    .blog-meta { font-size:12px; color:var(--muted); margin-bottom:10px; display:flex; gap:12px; }
+    .blog-title { font-size:18px; font-weight:700; color:var(--white); margin-bottom:12px; line-height:1.4; }
+    .blog-desc { font-size:14px; color:var(--muted); line-height:1.7; flex:1; }
+    .blog-link { margin-top:18px; color:var(--accent); font-size:13px; font-weight:700; letter-spacing:1px; display:flex; align-items:center; gap:6px; transition:gap 0.2s; }
+    .blog-card:hover .blog-link { gap:10px; }
+    .cat-filter { display:flex; gap:10px; flex-wrap:wrap; margin-top:32px; }
+    .cat-btn { background:var(--panel); border:1px solid rgba(0,200,255,0.15); color:var(--muted); padding:8px 18px; border-radius:100px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.3s; }
+    .cat-btn:hover, .cat-btn.active { background:var(--accent2); border-color:var(--accent); color:white; }
+  </style>
+</head>
+<body>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="closeMobileNav()">✕</button>
+  <a href="../index.html">მთავარი</a>
+  <a href="../index.html#services">სერვისები</a>
+  <a href="../index.html#contact">კონტაქტი</a>
+  <a href="index.html">ბლოგი</a>
+</div>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.svg" alt="Smart Security" style="height:38px;width:auto"/></a>
+  <ul class="nav-links">
+    <li><a href="../index.html">მთავარი</a></li>
+    <li><a href="../index.html#services">სერვისები</a></li>
+    <li><a href="../index.html#contact">კონტაქტი</a></li>
+    <li><a href="index.html" style="color:var(--accent)">ბლოგი</a></li>
+    <li><a href="tel:+995595708300" class="nav-cta">📞 დარეკე</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section style="padding:120px 40px 60px;background:var(--dark);border-bottom:1px solid rgba(0,200,255,0.08)">
+  <div class="container">
+    <div class="section-label">Smart Security ბლოგი</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(32px,4vw,50px);font-weight:900;margin-bottom:16px">უსაფრთხოების <span style="color:var(--accent)">სახელმძღვანელო</span></h1>
+    <p style="color:var(--muted);font-size:17px;max-width:580px;line-height:1.8">CCTV, სიგნალიზაცია, სახანძრო სისტემები — ყველაფერი რაც უნდა იცოდე სანამ გადაწყვეტილებას მიიღებ. ექსპერტული რჩევები, ფასები, შედარებები.</p>
+
+    <!-- Category filter -->
+    <div class="cat-filter">
+      <button class="cat-btn active" onclick="filterCat('all',this)">ყველა</button>
+      <button class="cat-btn" onclick="filterCat('cctv',this)">📷 CCTV</button>
+      <button class="cat-btn" onclick="filterCat('alarm',this)">🚨 სიგნალიზაცია</button>
+      <button class="cat-btn" onclick="filterCat('fire',this)">🔥 სახანძრო</button>
+      <button class="cat-btn" onclick="filterCat('tips',this)">💡 რჩევები</button>
+    </div>
+  </div>
+</section>
+
+<!-- Articles -->
+<section style="padding:60px 40px;background:var(--black)">
+  <div class="container">
+    <div class="blog-grid" id="blogGrid">
+
+      <a href="cctv-saxlistvis.html" class="blog-card reveal" data-cat="cctv">
+        <div class="blog-thumb">📷<span class="blog-tag">CCTV</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>📅 2025 · ენ. 15</span><span>⏱ 8 წთ</span></div>
+          <div class="blog-title">CCTV სისტემა სახლისთვის — რამდენი კამერა, რა ფასი?</div>
+          <p class="blog-desc">ყოველი სახლი განსხვავებულია — ჩვენ გეტყვით რამდენი კამერა გჭირდება, სად დამაგრება, რა ღირს სრული ინსტალაცია.</p>
+          <span class="blog-link">სტატიის წაკითხვა →</span>
+        </div>
+      </a>
+
+      <a href="ip-vs-analoguri.html" class="blog-card reveal" data-cat="cctv">
+        <div class="blog-thumb">🔭<span class="blog-tag">შედარება</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>📅 2025 · ენ. 22</span><span>⏱ 6 წთ</span></div>
+          <div class="blog-title">IP კამერა vs ანალოგური — რომელი ჯობია 2025-ში?</div>
+          <p class="blog-desc">ტექნიკური შედარება ექსპერტისგან: ხარისხი, ფასი, ინსტალაცია, Cloud, AI ანალიტიკა. კონკრეტული რეკომენდაცია.</p>
+          <span class="blog-link">სტატიის წაკითხვა →</span>
+        </div>
+      </a>
+
+      <a href="signalizacia-binistvis.html" class="blog-card reveal" data-cat="alarm">
+        <div class="blog-thumb">🚨<span class="blog-tag">სიგნალიზ.</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>📅 2025 · თებ. 3</span><span>⏱ 7 წთ</span></div>
+          <div class="blog-title">სიგნალიზაცია ბინისთვის — Ajax vs Paradox: რომელი ვირჩიოთ?</div>
+          <p class="blog-desc">Ajax Systems-ი vs Paradox — ქართული ბაზრის ლიდერი ბრენდების სრული შედარება ფასით, ხარისხით, მომსახურებით.</p>
+          <span class="blog-link">სტატიის წაკითხვა →</span>
+        </div>
+      </a>
+
+      <!-- Coming soon cards — show editorial calendar -->
+      <div class="blog-card reveal" data-cat="fire" style="opacity:0.6;pointer-events:none">
+        <div class="blog-thumb">🔥<span class="blog-tag">მალე</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>📅 2025 · თებ. 20</span><span>⏱ ~10 წთ</span></div>
+          <div class="blog-title">სახანძრო სიგნალიზაცია — ვის სჭირდება, რა ჯდება, როგორ ხდება სერტ.?</div>
+          <p class="blog-desc">კომერციული ობიექტების სახანძრო კანონმდებლობა, სახეობები, ინსტალაციის პროცესი.</p>
+          <span class="blog-link" style="color:var(--muted)">მალე →</span>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="tips" style="opacity:0.6;pointer-events:none">
+        <div class="blog-thumb">💡<span class="blog-tag">მალე</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>📅 2025 · მარ. 5</span><span>⏱ ~8 წთ</span></div>
+          <div class="blog-title">5 შეცდომა CCTV სისტემის ყიდვისას — ნუ გაიმეორებ</div>
+          <p class="blog-desc">ყველაზე ხშირი შეცდომები: ზედმეტი ან ნაკლები კამერა, კაბელი, NVR მახასიათებლები, ინსტალატორის არჩევა.</p>
+          <span class="blog-link" style="color:var(--muted)">მალე →</span>
+        </div>
+      </div>
+
+      <div class="blog-card reveal" data-cat="cctv" style="opacity:0.6;pointer-events:none">
+        <div class="blog-thumb">🌙<span class="blog-tag">მალე</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>📅 2025 · მარ. 12</span><span>⏱ ~6 წთ</span></div>
+          <div class="blog-title">ღამის ხედვა CCTV — IR vs Full-Color: განსხვავება და ფასი</div>
+          <p class="blog-desc">Starlight, ColorVu, Hikvision AcuSense — ღამის ხედვის ტექნოლოგიები შედარებულია.</p>
+          <span class="blog-link" style="color:var(--muted)">მალე →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter CTA -->
+<div class="service-cta-banner">
+  <div class="container">
+    <h2>ახალი სტატია? გამოგზავნე!</h2>
+    <p>WhatsApp-ზე გამოგვიგზავნე "ბლოგი" — ახალ სტატიებს პირველი მიიღებ.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/995595708300?text=ბლოგი" target="_blank" rel="noopener" class="btn-primary">💬 WhatsApp-ით გამოწერა</a>
+      <a href="../index.html#contact" class="btn-outline">კონსულტაცია →</a>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--panel);border-top:1px solid rgba(0,200,255,0.1);padding:30px 40px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+    <a href="../index.html" class="nav-logo"><img src="../assets/logo.svg" alt="Smart Security" style="height:32px;width:auto"/></a>
+    <p style="color:var(--muted);font-size:13px">© 2025 Smart Security.</p>
+    <a href="../index.html" class="btn-outline" style="padding:10px 20px;font-size:13px">← მთავარი გვერდი</a>
+  </div>
+</footer>
+
+<script>
+function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
+
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.blog-card[data-cat]').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

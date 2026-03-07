@@ -490,6 +490,60 @@
        SCRIPTS
   ═══════════════════════════════════════════ -->
   <script src="js/main.js"></script>
+  <script src="js/widgets.js"></script>
+
+  <!-- FAQ Rich Snippet Schema — Google SERP-ში კითხვა-პასუხ ბლოკი -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "CCTV სისტემა სახლისთვის საქართველოში რამდენი ღირს?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "4 კამერიანი სახლის სისტემა (IP NVR + 4 HD კამ. + ინსტ.) ჩვეულებრივ 600–900 ლარი ჯდება. ფასი დამოკ. კამ. კლასზე, NVR ტიპსა და ობ-ს სირთ-ზე. Smart Security გთავ. უფ. ინ-ს."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "სიგნალიზაციის ინსტალაცია რამდენ დღეს იღებს?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ჩვეულებრივ 1–2 სამუშაო დღე. Ajax სის-ი — სრულად უმ-ლო, ინ-ა სწ-ა და სუ-ა."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Smart Security-ი მთელ საქართველოში მუშაობს?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "დიახ. ვ. თბ., ბ., ქ-ი, ბ-ი, ზ-ი, ქ-ი, ს-ი, ს-ი. ყ-ი ქ. — ფ-ი გ-ება ინ-ლ. ჩ-ი."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "გარანტია ინსტალაციაზე არის?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "კი. 2 წლიანი გარანტია ყველა ინსტ-ზე. 24/7 ტ-ი მ-ა, სწ-ი გ-ება."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Smart Security", "item": "https://smartsecurity.com.ge/" }
+    ]
+  }
+  </script>
 
 </body>
 </html>
