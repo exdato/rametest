@@ -110,7 +110,7 @@ function renderServices() {
         <div class="service-icon">${s.icon}</div>
         <div class="service-title">${tr.title}</div>
         <p class="service-desc">${tr.desc}</p>
-        <a href="#contact" class="service-link">${t('services.learn_more')} →</a>
+        <a href="${s.page || '#contact'}" class="service-link">${t('services.learn_more')} →</a>
       </div>
     `;
   }).join('');
