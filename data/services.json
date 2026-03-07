@@ -1,0 +1,135 @@
+[
+  {
+    "id": "cctv",
+    "icon": "📷",
+    "num": "01",
+    "translations": {
+      "ka": {
+        "title": "CCTV კამერები",
+        "desc": "HD და 4K ვიდეო მეთვალყურეობის სისტემები — IP, ანალოგური, PTZ. ღამის ხედვა, მოძრაობის დეტექცია, ღრუბლოვანი ჩაწერა."
+      },
+      "en": {
+        "title": "CCTV Cameras",
+        "desc": "HD and 4K video surveillance — IP, analog, PTZ cameras. Night vision, motion detection, cloud recording included."
+      },
+      "ru": {
+        "title": "CCTV Камеры",
+        "desc": "HD и 4K видеонаблюдение — IP, аналог, PTZ. Ночное зрение, детекция движения, облачная запись."
+      }
+    }
+  },
+  {
+    "id": "alarm",
+    "icon": "🚨",
+    "num": "02",
+    "translations": {
+      "ka": {
+        "title": "სიგნალიზაცია",
+        "desc": "სრული სიგნალიზაციის სისტემები სახლისა და ბიზნეს ობიექტებისთვის. GSM, Wi-Fi, სმარტფონის მართვა."
+      },
+      "en": {
+        "title": "Alarm Systems",
+        "desc": "Complete alarm systems for homes and businesses. GSM, Wi-Fi enabled with smartphone control and instant alerts."
+      },
+      "ru": {
+        "title": "Сигнализация",
+        "desc": "Полные системы сигнализации для домов и бизнеса. GSM, Wi-Fi с управлением через смартфон."
+      }
+    }
+  },
+  {
+    "id": "fire",
+    "icon": "🔥",
+    "num": "03",
+    "translations": {
+      "ka": {
+        "title": "სახანძრო სისტემები",
+        "desc": "სახანძრო სიგნალიზაცია და ჩამქრობი სისტემები. სერტიფიცირებული ინსტალაცია ყველა ტიპის ობიექტისთვის."
+      },
+      "en": {
+        "title": "Fire Systems",
+        "desc": "Fire alarms and suppression systems. Certified installation for all types of premises and commercial buildings."
+      },
+      "ru": {
+        "title": "Пожарные Системы",
+        "desc": "Пожарная сигнализация и системы пожаротушения. Сертифицированный монтаж для любых объектов."
+      }
+    }
+  },
+  {
+    "id": "locks",
+    "icon": "🔒",
+    "num": "04",
+    "translations": {
+      "ka": {
+        "title": "ელექტრო საკეტები",
+        "desc": "თანამედროვე ბიომეტრიული, RFID და PIN კოდის საკეტები. შესასვლელის კონტროლი სხვადასხვა ობიექტებისთვის."
+      },
+      "en": {
+        "title": "Smart Locks",
+        "desc": "Biometric, RFID and PIN code access control. Smart lock solutions for offices, apartments and commercial spaces."
+      },
+      "ru": {
+        "title": "Электронные Замки",
+        "desc": "Биометрические, RFID и PIN замки. Контроль доступа для офисов, квартир и коммерческих помещений."
+      }
+    }
+  },
+  {
+    "id": "barriers",
+    "icon": "🚧",
+    "num": "05",
+    "translations": {
+      "ka": {
+        "title": "შლაგბაუმები",
+        "desc": "ავტომატური შლაგბაუმები პარკინგისა და ტერიტორიის მართვისთვის. RFID, ლოჯი ბარათი, მობილური მართვა."
+      },
+      "en": {
+        "title": "Barriers",
+        "desc": "Automatic barriers for parking and territory management. RFID, card access and mobile app control."
+      },
+      "ru": {
+        "title": "Шлагбаумы",
+        "desc": "Автоматические шлагбаумы для парковок и управления территорией. RFID, карточный и мобильный контроль."
+      }
+    }
+  },
+  {
+    "id": "turnstiles",
+    "icon": "🚪",
+    "num": "06",
+    "translations": {
+      "ka": {
+        "title": "ტურნიკეტები",
+        "desc": "ოფისების, სკოლებისა და სავაჭრო ცენტრებისთვის. სხვადასხვა ტიპის ტურნიკეტი, ინდივიდუალური კონფიგურაცია."
+      },
+      "en": {
+        "title": "Turnstiles",
+        "desc": "For offices, schools and shopping centers. Various turnstile types with custom configuration options."
+      },
+      "ru": {
+        "title": "Турникеты",
+        "desc": "Для офисов, школ и торговых центров. Различные типы турникетов с индивидуальной настройкой."
+      }
+    }
+  },
+  {
+    "id": "intercom",
+    "icon": "📞",
+    "num": "07",
+    "translations": {
+      "ka": {
+        "title": "ინტერკომი",
+        "desc": "IP და ანალოგური ინტერკომები ვიდეო კარის ზარით. სმარტფონზე გამოძახება, კარის ელექტრონული გახსნა."
+      },
+      "en": {
+        "title": "Intercom",
+        "desc": "IP and analog intercom systems with video doorbell. Smartphone calls, remote door unlock from anywhere."
+      },
+      "ru": {
+        "title": "Домофон",
+        "desc": "IP и аналоговые домофоны с видеозвонком. Звонки на смартфон, дистанционное открытие двери."
+      }
+    }
+  }
+]

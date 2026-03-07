@@ -1,0 +1,323 @@
+{
+  "ka": {
+    "meta": {
+      "title": "Smart Security | უსაფრთხოების სისტემები საქართველოში",
+      "description": "Smart Security — საქართველოს წამყვანი კომპანია CCTV, სიგნალიზაცია, სახანძრო სისტემები, ელექტრო საკეტები, შლაგბაუმები, ტურნიკეტები და ინტერკომი. 500+ პროექტი, 10 წლიანი გამოცდილება.",
+      "keywords": "CCTV კამერები, სიგნალიზაცია, სახანძრო სისტემები, ელექტრო საკეტები, შლაგბაუმები, ტურნიკეტები, ინტერკომი, უსაფრთხოება, Smart Security, თბილისი, საქართველო"
+    },
+    "nav": {
+      "home": "მთავარი",
+      "services": "სერვისები",
+      "about": "ჩვენ შესახებ",
+      "process": "პროცესი",
+      "contact": "კონტაქტი",
+      "cta": "📞 დარეკე"
+    },
+    "hero": {
+      "badge": "საქართველოს #1 უსაფრთხოება",
+      "title_line1": "თქვენი საკუთრება —",
+      "title_line2": "PROTECTED.",
+      "subtitle": "Smart Security გთავაზობთ მაღალი კლასის მეთვალყურეობის, სიგნალიზაციისა და წვდომის კონტროლის სისტემებს. ინსტალაციდან სერვისამდე — ჩვენ გვერდით ვართ.",
+      "btn_primary": "უფასო კონსულტაცია",
+      "btn_secondary": "სერვისები",
+      "stat_projects": "პროექტი",
+      "stat_years": "წლიანი გამოცდილება",
+      "stat_support": "მხარდაჭერა",
+      "tag1": "LIVE მონიტორინგი",
+      "tag2": "HD კამერები",
+      "tag3": "სმარტ წვდომა"
+    },
+    "services": {
+      "label": "ჩვენი სერვისები",
+      "title": "სრული უსაფრთხოების გადაწყვეტილებები",
+      "subtitle": "ჩვენ გთავაზობთ უსაფრთხოების სისტემების სრულ სპექტრს — დაგეგმვიდან, ინსტალაციამდე, ტექნიკური მხარდაჭერამდე.",
+      "learn_more": "გაიგე მეტი"
+    },
+    "why": {
+      "label": "რატომ ჩვენ",
+      "title": "10 წელი სანდო სერვისი",
+      "feat1_title": "გამოცდილი გუნდი",
+      "feat1_desc": "10+ წლის გამოცდილება, 500-ზე მეტი წარმატებული პროექტი საქართველოში.",
+      "feat2_title": "სწრაფი ინსტალაცია",
+      "feat2_desc": "ჩვეულებრივ 1–3 სამუშაო დღეში ვასრულებთ ინსტალაციას. გარანტირებული ვადები.",
+      "feat3_title": "ტექნიკური მხარდაჭერა",
+      "feat3_desc": "24/7 ტექნიკური მხარდაჭერა, სწრაფი გამოძახება. გარანტია ყველა ინსტალაციაზე.",
+      "feat4_title": "ინდივიდუალური მიდგომა",
+      "feat4_desc": "თითოეული პროექტი ინდივიდუალურად იგეგმება. უფასო ინსპექცია და კონსულტაცია.",
+      "stats_title": "სტატისტიკა",
+      "stat1_label": "კმაყოფილი კლიენტი",
+      "stat2_label": "პროექტი ვადაში",
+      "stat3_label": "სერვის პასუხი",
+      "stat4_label": "გარანტიის დაფარვა"
+    },
+    "process": {
+      "label": "მუშაობის პროცესი",
+      "title": "4 მარტივი ნაბიჯი",
+      "step1_title": "კონსულტაცია",
+      "step1_desc": "უფასო კონსულტაცია და ობიექტის ინსპექცია ჩვენი ექსპერტის მიერ.",
+      "step2_title": "დიზაინი",
+      "step2_desc": "ინდივიდუალური სისტემის დიზაინი და ღირებულების გაანგარიშება.",
+      "step3_title": "ინსტალაცია",
+      "step3_desc": "პროფესიონალური ინსტალაცია გარანტირებული ვადებით და მინიმალური შეფერხებით.",
+      "step4_title": "მხარდაჭერა",
+      "step4_desc": "24/7 ტექნიკური სერვისი, მოწყობილობების განახლება და გრძელვადიანი პარტნიორობა."
+    },
+    "partners": {
+      "label": "ჩვენი პარტნიორები",
+      "title": "ლიდერი ბრენდები"
+    },
+    "reviews": {
+      "label": "კლიენტების მოსაზრება",
+      "title": "ისინი გვენდობიან",
+      "r1_text": "Smart Security-მ ჩვენი ოფისი 3 დღეში დამონტაჟა. პროფესიონალური მომსახურება, ყველა კამერა კარგად მუშაობს!",
+      "r1_name": "გიორგი მ.",
+      "r1_role": "LLC Director, Tbilisi",
+      "r2_text": "სახანძრო სისტემა სწრაფად დამიდგეს, ყველა დოკუმენტაცია სწორად. ფასი ბაზართან შედარებით ძალიან კარგია.",
+      "r2_name": "ნინო კ.",
+      "r2_role": "Restaurant Owner, Batumi",
+      "r3_text": "სახლის სრული ინტერკომი და CCTV სისტემა. ყველა ნუანსი გაითვალისწინეს და ბოლომდე ახსნეს.",
+      "r3_name": "David S.",
+      "r3_role": "Homeowner, Kutaisi"
+    },
+    "contact": {
+      "label": "კონტაქტი",
+      "title": "დაგვიკავშირდით",
+      "subtitle": "უფასო კონსულტაციისთვის დაგვიკავშირდით ან შეავსეთ ფორმა — პასუხს 24 საათში მოგცემთ.",
+      "phone_label": "ტელეფონი",
+      "email_label": "ელ-ფოსტა",
+      "hours_label": "სამუშაო საათები",
+      "hours_val": "ორშ–კვირა: 09:00 – 18:00",
+      "area_label": "მომსახურების ზონა",
+      "area_val": "მთელი საქართველო",
+      "form_name": "სახელი",
+      "form_phone": "ტელეფონი",
+      "form_service": "სერვისი",
+      "form_service_placeholder": "სერვისი აირჩიეთ...",
+      "form_message": "შეტყობინება",
+      "form_submit": "გაგზავნა →",
+      "form_success": "გმადლობთ! შეტყობინება გაიგზავნა. 24 საათში დაგიკავშირდებით.",
+      "form_error": "შეცდომა. გთხოვთ სცადოთ ხელახლა."
+    },
+    "footer": {
+      "brand_desc": "საქართველოს წამყვანი კომპანია უსაფრთხოების სისტემებში. 500+ პროექტი, 10 წლიანი გამოცდილება.",
+      "col_services": "სერვისები",
+      "col_nav": "ნავიგაცია",
+      "col_contact": "კონტაქტი",
+      "copyright": "ყველა უფლება დაცულია."
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "Smart Security | Security Systems in Georgia",
+      "description": "Smart Security — Georgia's leading company for CCTV, alarm systems, fire protection, smart locks, barriers, turnstiles and intercoms. 500+ projects, 10 years of expertise.",
+      "keywords": "CCTV cameras, alarm system, fire protection, smart locks, barriers, turnstiles, intercom, security, Smart Security, Tbilisi, Georgia"
+    },
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "about": "About",
+      "process": "Process",
+      "contact": "Contact",
+      "cta": "📞 Call Us"
+    },
+    "hero": {
+      "badge": "#1 Security in Georgia",
+      "title_line1": "Your Property —",
+      "title_line2": "PROTECTED.",
+      "subtitle": "Smart Security provides premium surveillance, alarm and access control systems across Georgia. From installation to service — we've got you covered.",
+      "btn_primary": "Free Consultation",
+      "btn_secondary": "Our Services",
+      "stat_projects": "Projects",
+      "stat_years": "Years Exp.",
+      "stat_support": "Support",
+      "tag1": "LIVE Monitoring",
+      "tag2": "HD Cameras",
+      "tag3": "Smart Access"
+    },
+    "services": {
+      "label": "Our Services",
+      "title": "Complete Security Solutions",
+      "subtitle": "We offer a full spectrum of security systems — from planning and installation to ongoing technical support.",
+      "learn_more": "Learn More"
+    },
+    "why": {
+      "label": "Why Choose Us",
+      "title": "10 Years of Trusted Service",
+      "feat1_title": "Experienced Team",
+      "feat1_desc": "10+ years of experience with 500+ successful projects completed across Georgia.",
+      "feat2_title": "Fast Installation",
+      "feat2_desc": "Typically complete installation in 1–3 business days. Guaranteed deadlines every time.",
+      "feat3_title": "24/7 Support",
+      "feat3_desc": "24/7 technical support with rapid response. Full warranty on every installation we complete.",
+      "feat4_title": "Custom Solutions",
+      "feat4_desc": "Every project is individually planned. Free on-site inspection and expert consultation.",
+      "stats_title": "Statistics",
+      "stat1_label": "Satisfied Clients",
+      "stat2_label": "On-Time Projects",
+      "stat3_label": "Service Response",
+      "stat4_label": "Warranty Coverage"
+    },
+    "process": {
+      "label": "How We Work",
+      "title": "4 Simple Steps",
+      "step1_title": "Consultation",
+      "step1_desc": "Free consultation and on-site inspection by our security expert.",
+      "step2_title": "Design",
+      "step2_desc": "Custom system design and detailed cost estimation tailored to your needs.",
+      "step3_title": "Installation",
+      "step3_desc": "Professional installation with guaranteed timelines and minimal disruption.",
+      "step4_title": "Support",
+      "step4_desc": "24/7 technical service, equipment upgrades and long-term partnership."
+    },
+    "partners": {
+      "label": "Our Partners",
+      "title": "Leading Brands"
+    },
+    "reviews": {
+      "label": "Client Reviews",
+      "title": "They Trust Us",
+      "r1_text": "Smart Security installed our office in 3 days. Very professional service, all cameras working perfectly!",
+      "r1_name": "Giorgi M.",
+      "r1_role": "LLC Director, Tbilisi",
+      "r2_text": "Fire system was installed quickly with all documentation correct. Price is very competitive compared to the market.",
+      "r2_name": "Nino K.",
+      "r2_role": "Restaurant Owner, Batumi",
+      "r3_text": "Full home intercom and CCTV system. They considered every detail and explained everything from start to finish.",
+      "r3_name": "David S.",
+      "r3_role": "Homeowner, Kutaisi"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "Get In Touch",
+      "subtitle": "For a free consultation call us or fill out the form — we'll respond within 24 hours.",
+      "phone_label": "Phone",
+      "email_label": "Email",
+      "hours_label": "Working Hours",
+      "hours_val": "Mon–Sun: 09:00 – 18:00",
+      "area_label": "Service Area",
+      "area_val": "All of Georgia",
+      "form_name": "Name",
+      "form_phone": "Phone",
+      "form_service": "Service",
+      "form_service_placeholder": "Select service...",
+      "form_message": "Message",
+      "form_submit": "Send Message →",
+      "form_success": "Thank you! Your message has been sent. We'll contact you within 24 hours.",
+      "form_error": "Error. Please try again."
+    },
+    "footer": {
+      "brand_desc": "Georgia's leading security systems company. 500+ projects, 10 years of expertise.",
+      "col_services": "Services",
+      "col_nav": "Navigation",
+      "col_contact": "Contact",
+      "copyright": "All rights reserved."
+    }
+  },
+  "ru": {
+    "meta": {
+      "title": "Smart Security | Системы Безопасности в Грузии",
+      "description": "Smart Security — ведущая компания Грузии по системам видеонаблюдения, сигнализации, пожарной защиты, электронным замкам, шлагбаумам, турникетам и домофонам. 500+ проектов, 10 лет опыта.",
+      "keywords": "CCTV камеры, сигнализация, пожарная защита, электронные замки, шлагбаумы, турникеты, домофон, безопасность, Smart Security, Тбилиси, Грузия"
+    },
+    "nav": {
+      "home": "Главная",
+      "services": "Услуги",
+      "about": "О нас",
+      "process": "Процесс",
+      "contact": "Контакт",
+      "cta": "📞 Позвонить"
+    },
+    "hero": {
+      "badge": "#1 Безопасность в Грузии",
+      "title_line1": "Ваша Собственность —",
+      "title_line2": "PROTECTED.",
+      "subtitle": "Smart Security предлагает премиальные системы видеонаблюдения, сигнализации и контроля доступа по всей Грузии. От установки до сервиса — мы рядом.",
+      "btn_primary": "Бесплатная Консультация",
+      "btn_secondary": "Услуги",
+      "stat_projects": "Проектов",
+      "stat_years": "Лет Опыта",
+      "stat_support": "Поддержка",
+      "tag1": "Мониторинг LIVE",
+      "tag2": "HD Камеры",
+      "tag3": "Смарт Доступ"
+    },
+    "services": {
+      "label": "Наши Услуги",
+      "title": "Комплексные Решения Безопасности",
+      "subtitle": "Мы предлагаем полный спектр систем безопасности — от планирования и монтажа до технической поддержки.",
+      "learn_more": "Подробнее"
+    },
+    "why": {
+      "label": "Почему Мы",
+      "title": "10 Лет Надёжного Сервиса",
+      "feat1_title": "Опытная Команда",
+      "feat1_desc": "10+ лет опыта, более 500 успешно завершённых проектов по всей Грузии.",
+      "feat2_title": "Быстрый Монтаж",
+      "feat2_desc": "Обычно завершаем монтаж за 1–3 рабочих дня. Гарантированные сроки всегда.",
+      "feat3_title": "Поддержка 24/7",
+      "feat3_desc": "Круглосуточная техподдержка, быстрый выезд. Полная гарантия на каждую нашу установку.",
+      "feat4_title": "Индивидуальный Подход",
+      "feat4_desc": "Каждый проект планируется индивидуально. Бесплатный осмотр и экспертная консультация.",
+      "stats_title": "Статистика",
+      "stat1_label": "Довольных Клиентов",
+      "stat2_label": "Проектов вовремя",
+      "stat3_label": "Ответ на вызов",
+      "stat4_label": "Гарантийное покрытие"
+    },
+    "process": {
+      "label": "Как Мы Работаем",
+      "title": "4 Простых Шага",
+      "step1_title": "Консультация",
+      "step1_desc": "Бесплатная консультация и осмотр объекта нашим экспертом.",
+      "step2_title": "Проектирование",
+      "step2_desc": "Индивидуальное проектирование и подробная смета, адаптированная под ваши нужды.",
+      "step3_title": "Установка",
+      "step3_desc": "Профессиональный монтаж в гарантированные сроки с минимальными помехами.",
+      "step4_title": "Поддержка",
+      "step4_desc": "Круглосуточный техсервис, обновление оборудования и долгосрочное партнёрство."
+    },
+    "partners": {
+      "label": "Наши Партнёры",
+      "title": "Ведущие Бренды"
+    },
+    "reviews": {
+      "label": "Отзывы Клиентов",
+      "title": "Нам Доверяют",
+      "r1_text": "Smart Security установили наш офис за 3 дня. Очень профессиональный сервис, все камеры работают отлично!",
+      "r1_name": "Гиорги М.",
+      "r1_role": "LLC Director, Tbilisi",
+      "r2_text": "Пожарную систему установили быстро, документация вся правильная. Цена очень хорошая по сравнению с рынком.",
+      "r2_name": "Нино К.",
+      "r2_role": "Restaurant Owner, Batumi",
+      "r3_text": "Полная система домофона и CCTV в доме. Учли все нюансы и всё объяснили от начала до конца.",
+      "r3_name": "David S.",
+      "r3_role": "Homeowner, Kutaisi"
+    },
+    "contact": {
+      "label": "Контакты",
+      "title": "Свяжитесь с Нами",
+      "subtitle": "Для бесплатной консультации позвоните или заполните форму — мы ответим в течение 24 часов.",
+      "phone_label": "Телефон",
+      "email_label": "Email",
+      "hours_label": "Часы работы",
+      "hours_val": "Пн–Вс: 09:00 – 18:00",
+      "area_label": "Зона обслуживания",
+      "area_val": "Вся Грузия",
+      "form_name": "Имя",
+      "form_phone": "Телефон",
+      "form_service": "Услуга",
+      "form_service_placeholder": "Выберите услугу...",
+      "form_message": "Сообщение",
+      "form_submit": "Отправить →",
+      "form_success": "Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в течение 24 часов.",
+      "form_error": "Ошибка. Пожалуйста, попробуйте снова."
+    },
+    "footer": {
+      "brand_desc": "Ведущая компания систем безопасности в Грузии. 500+ проектов, 10 лет опыта.",
+      "col_services": "Услуги",
+      "col_nav": "Навигация",
+      "col_contact": "Контакт",
+      "copyright": "Все права защищены."
+    }
+  }
+}

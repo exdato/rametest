@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <!-- ═══════════════════════════════════════════════
+       Smart Security | index.html
+       Populated dynamically via js/main.js + data/translations.json
+  ═══════════════════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO – titles/descriptions injected by JS from translations.json -->
+  <title>Smart Security | უსაფრთხოების სისტემები საქართველოში</title>
+  <meta name="description" content="Smart Security — საქართველოს წამყვანი კომპანია CCTV, სიგნალიზაცია, სახანძრო სისტემები, ელექტრო საკეტები, შლაგბაუმები, ტურნიკეტები და ინტერკომი." />
+  <meta name="keywords"    content="CCTV, სიგნალიზაცია, სახანძრო სისტემები, Smart Security, საქართველო, Tbilisi" />
+  <meta name="robots"      content="index, follow" />
+  <meta name="author"      content="Smart Security" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://smartsecurity.com.ge/" />
+  <meta property="og:title"       content="Smart Security | უსაფრთხოების სისტემები" />
+  <meta property="og:description" content="საქართველოს წამყვანი უსაფრთხოების კომპანია" />
+  <meta property="og:image"       content="assets/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Smart Security" />
+  <meta name="twitter:description" content="CCTV, სიგნალიზაცია, სახანძრო სისტემები საქართველოში" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://smartsecurity.com.ge/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+
+  <!-- Favicon (replace with actual icon) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- JSON-LD Structured Data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Smart Security",
+    "url": "https://smartsecurity.com.ge",
+    "telephone": "+995595708300",
+    "email": "info@smartsecurity.com.ge",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GE",
+      "addressLocality": "Tbilisi"
+    },
+    "openingHours": "Mo-Su 09:00-18:00",
+    "sameAs": [],
+    "description": "Security systems installation in Georgia — CCTV, alarms, fire protection, smart locks, barriers, turnstiles, intercom."
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       MOBILE NAV OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" onclick="closeMobileNav()">✕</button>
+    <a href="#home"    onclick="closeMobileNav()"><span data-i18n="nav.home"></span></a>
+    <a href="#services" onclick="closeMobileNav()"><span data-i18n="nav.services"></span></a>
+    <a href="#why"     onclick="closeMobileNav()"><span data-i18n="nav.about"></span></a>
+    <a href="#process" onclick="closeMobileNav()"><span data-i18n="nav.process"></span></a>
+    <a href="#contact" onclick="closeMobileNav()"><span data-i18n="nav.contact"></span></a>
+    <div class="lang-switcher" style="margin-top:20px">
+      <button class="lang-btn" data-lang="ka" onclick="setLang('ka')">🇬🇪 KA</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇬🇧 EN</button>
+      <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">🇷🇺 RU</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav>
+    <a href="#home" class="nav-logo">
+      <div class="shield">🛡</div>
+      <span>SMART <em>SECURITY</em></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home"><span    data-i18n="nav.home"></span></a></li>
+      <li><a href="#services"><span data-i18n="nav.services"></span></a></li>
+      <li><a href="#why"><span     data-i18n="nav.about"></span></a></li>
+      <li><a href="#process"><span  data-i18n="nav.process"></span></a></li>
+      <li><a href="#contact"><span  data-i18n="nav.contact"></span></a></li>
+      <li><a href="tel:+995595708300" class="nav-cta"><span data-i18n="nav.cta"></span></a></li>
+    </ul>
+
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="ka" onclick="setLang('ka')">🇬🇪 KA</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇬🇧 EN</button>
+        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">🇷🇺 RU</button>
+      </div>
+      <div class="hamburger" onclick="openMobileNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+
+      <div>
+        <div class="hero-badge">
+          <div class="badge-dot"></div>
+          <span data-i18n="hero.badge"></span>
+        </div>
+
+        <h1>
+          <div class="line1" data-i18n="hero.title_line1"></div>
+          <div class="line2">PROTECTED.</div>
+        </h1>
+
+        <p class="hero-sub" data-i18n="hero.subtitle"></p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary" data-i18n="hero.btn_primary"></a>
+          <a href="#services" class="btn-outline" data-i18n="hero.btn_secondary"></a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-label" data-i18n="hero.stat_projects"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label" data-i18n="hero.stat_years"></div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label" data-i18n="hero.stat_support"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shield animation -->
+      <div class="hero-visual">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <div class="shield-big"><div class="shield-inner">🛡️</div></div>
+        <div class="floating-tag ft1"><div class="ft-dot"></div><span data-i18n="hero.tag1"></span></div>
+        <div class="floating-tag ft2"><div class="ft-dot"></div><span data-i18n="hero.tag2"></span></div>
+        <div class="floating-tag ft3"><div class="ft-dot"></div><span data-i18n="hero.tag3"></span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TICKER TAPE
+  ═══════════════════════════════════════════ -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="ticker-item"><span class="ticker-icon">📷</span> CCTV</div>
+      <div class="ticker-item"><span class="ticker-icon">🚨</span> ALARM</div>
+      <div class="ticker-item"><span class="ticker-icon">🔥</span> FIRE SYSTEMS</div>
+      <div class="ticker-item"><span class="ticker-icon">🔒</span> SMART LOCKS</div>
+      <div class="ticker-item"><span class="ticker-icon">🚧</span> BARRIERS</div>
+      <div class="ticker-item"><span class="ticker-icon">🚪</span> TURNSTILES</div>
+      <div class="ticker-item"><span class="ticker-icon">📞</span> INTERCOM</div>
+      <div class="ticker-item"><span class="ticker-icon">🛡</span> SMART SECURITY</div>
+      <!-- duplicate for seamless loop -->
+      <div class="ticker-item"><span class="ticker-icon">📷</span> CCTV</div>
+      <div class="ticker-item"><span class="ticker-icon">🚨</span> ALARM</div>
+      <div class="ticker-item"><span class="ticker-icon">🔥</span> FIRE SYSTEMS</div>
+      <div class="ticker-item"><span class="ticker-icon">🔒</span> SMART LOCKS</div>
+      <div class="ticker-item"><span class="ticker-icon">🚧</span> BARRIERS</div>
+      <div class="ticker-item"><span class="ticker-icon">🚪</span> TURNSTILES</div>
+      <div class="ticker-item"><span class="ticker-icon">📞</span> INTERCOM</div>
+      <div class="ticker-item"><span class="ticker-icon">🛡</span> SMART SECURITY</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES — populated by JS from services.json
+  ═══════════════════════════════════════════ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-label" data-i18n="services.label"></div>
+      <h2 class="section-title" data-i18n="services.title"></h2>
+      <p class="section-desc"   data-i18n="services.subtitle"></p>
+      <div class="services-grid" id="servicesGrid">
+        <!-- Cards injected by main.js renderServices() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHY US
+  ═══════════════════════════════════════════ -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="section-label" data-i18n="why.label"></div>
+      <h2 class="section-title"  data-i18n="why.title"></h2>
+
+      <div class="why-grid">
+        <!-- Features -->
+        <div class="why-features reveal">
+          <div class="why-feat">
+            <div class="why-icon">🏆</div>
+            <div>
+              <h4 data-i18n="why.feat1_title"></h4>
+              <p  data-i18n="why.feat1_desc"></p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="why-icon">⚡</div>
+            <div>
+              <h4 data-i18n="why.feat2_title"></h4>
+              <p  data-i18n="why.feat2_desc"></p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="why-icon">🔧</div>
+            <div>
+              <h4 data-i18n="why.feat3_title"></h4>
+              <p  data-i18n="why.feat3_desc"></p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="why-icon">💡</div>
+            <div>
+              <h4 data-i18n="why.feat4_title"></h4>
+              <p  data-i18n="why.feat4_desc"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats panel -->
+        <div class="why-visual reveal">
+          <div class="stats-panel">
+            <h3 data-i18n="why.stats_title"></h3>
+            <div class="stat-row">
+              <div>
+                <div class="stat-row-label" data-i18n="why.stat1_label"></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:98%"></div></div>
+              </div>
+              <div class="stat-row-val">98%</div>
+            </div>
+            <div class="stat-row">
+              <div>
+                <div class="stat-row-label" data-i18n="why.stat2_label"></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:96%"></div></div>
+              </div>
+              <div class="stat-row-val">96%</div>
+            </div>
+            <div class="stat-row">
+              <div>
+                <div class="stat-row-label" data-i18n="why.stat3_label"></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:99%"></div></div>
+              </div>
+              <div class="stat-row-val">&lt;2h</div>
+            </div>
+            <div class="stat-row">
+              <div>
+                <div class="stat-row-label" data-i18n="why.stat4_label"></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+              </div>
+              <div class="stat-row-val">2 yr</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PROCESS
+  ═══════════════════════════════════════════ -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-label" data-i18n="process.label"></div>
+      <h2 class="section-title"  data-i18n="process.title"></h2>
+      <div class="process-steps reveal">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4 data-i18n="process.step1_title"></h4>
+          <p  data-i18n="process.step1_desc"></p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4 data-i18n="process.step2_title"></h4>
+          <p  data-i18n="process.step2_desc"></p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4 data-i18n="process.step3_title"></h4>
+          <p  data-i18n="process.step3_desc"></p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h4 data-i18n="process.step4_title"></h4>
+          <p  data-i18n="process.step4_desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       PARTNERS
+  ═══════════════════════════════════════════ -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="section-label" data-i18n="partners.label"></div>
+      <h2 class="section-title"  data-i18n="partners.title"></h2>
+      <div class="partners-track reveal">
+        <div class="partner-chip">HIKVISION</div>
+        <div class="partner-chip">DAHUA</div>
+        <div class="partner-chip">AJAX SYSTEMS</div>
+        <div class="partner-chip">BOSCH</div>
+        <div class="partner-chip">CAME</div>
+        <div class="partner-chip">FERMAX</div>
+        <div class="partner-chip">ZKTECO</div>
+        <div class="partner-chip">PARADOX</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       REVIEWS — populated by JS
+  ═══════════════════════════════════════════ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-label" data-i18n="reviews.label"></div>
+      <h2 class="section-title"  data-i18n="reviews.title"></h2>
+      <div class="testimonials-grid reveal" id="reviewsGrid">
+        <!-- Cards injected by main.js renderReviews() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-label" data-i18n="contact.label"></div>
+      <h2 class="section-title"  data-i18n="contact.title"></h2>
+      <p class="section-desc"    data-i18n="contact.subtitle"></p>
+
+      <div class="contact-grid">
+
+        <!-- Info cards -->
+        <div class="contact-info reveal">
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4 data-i18n="contact.phone_label"></h4>
+              <p><a href="tel:+995595708300">+995 595 70 83 00</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4 data-i18n="contact.email_label"></h4>
+              <p><a href="mailto:info@smartsecurity.com.ge">info@smartsecurity.com.ge</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">🕒</div>
+            <div>
+              <h4 data-i18n="contact.hours_label"></h4>
+              <p data-i18n="contact.hours_val"></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4 data-i18n="contact.area_label"></h4>
+              <p data-i18n="contact.area_val"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formName" data-i18n="contact.form_name"></label>
+              <input type="text" id="formName" name="name" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="formPhone" data-i18n="contact.form_phone"></label>
+              <input type="tel"  id="formPhone" name="phone" placeholder="+995 ..." autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formService" data-i18n="contact.form_service"></label>
+            <select id="formService" name="service">
+              <!-- options injected by JS -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formMessage" data-i18n="contact.form_message"></label>
+            <textarea id="formMessage" name="message"></textarea>
+          </div>
+          <div class="form-success-msg" id="formSuccess"></div>
+          <div class="form-error-msg"   id="formError"></div>
+          <button type="submit" id="formSubmit" class="btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:18px;"
+                  data-i18n="contact.form_submit"></button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">
+          <div class="shield">🛡</div>
+          <span>SMART <em>SECURITY</em></span>
+        </a>
+        <p data-i18n="footer.brand_desc"></p>
+        <div class="social-row">
+          <a class="social-btn" href="https://facebook.com" target="_blank" rel="noopener" title="Facebook">FB</a>
+          <a class="social-btn" href="https://instagram.com" target="_blank" rel="noopener" title="Instagram">IG</a>
+          <a class="social-btn" href="https://wa.me/995595708300" target="_blank" rel="noopener" title="WhatsApp">WA</a>
+          <a class="social-btn" href="https://t.me/" target="_blank" rel="noopener" title="Telegram">TG</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_services"></h4>
+        <ul>
+          <li><a href="#services">CCTV</a></li>
+          <li><a href="#services" data-i18n-service="alarm"></a></li>
+          <li><a href="#services" data-i18n-service="fire"></a></li>
+          <li><a href="#services" data-i18n-service="locks"></a></li>
+          <li><a href="#services" data-i18n-service="barriers"></a></li>
+          <li><a href="#services" data-i18n-service="turnstiles"></a></li>
+          <li><a href="#services" data-i18n-service="intercom"></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_nav"></h4>
+        <ul>
+          <li><a href="#home"     data-i18n="nav.home"></a></li>
+          <li><a href="#why"      data-i18n="nav.about"></a></li>
+          <li><a href="#process"  data-i18n="nav.process"></a></li>
+          <li><a href="#contact"  data-i18n="nav.contact"></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_contact"></h4>
+        <ul>
+          <li><a href="tel:+995595708300">+995 595 70 83 00</a></li>
+          <li><a href="mailto:info@smartsecurity.com.ge">info@smartsecurity.com.ge</a></li>
+          <li><a href="https://smartsecurity.com.ge">smartsecurity.com.ge</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Smart Security. <span data-i18n="footer.copyright"></span></span>
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="ka" onclick="setLang('ka')">🇬🇪</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇬🇧</button>
+        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">🇷🇺</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
