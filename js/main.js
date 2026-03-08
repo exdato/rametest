@@ -212,7 +212,7 @@ window.openMobileNav  = openMobileNav;
 window.closeMobileNav = closeMobileNav;
 
 /* ================================================================
-   10. CONTACT FORM
+   10. CONTACT FORM — triple delivery: WhatsApp + Email + Messenger
    ================================================================ */
 function initContactForm() {
   const form    = document.getElementById('contactForm');
@@ -222,44 +222,91 @@ function initContactForm() {
 
   if (!form) return;
 
-  form.addEventListener('submit', async e => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    btn.disabled = true;
-    btn.textContent = '...';
-    success.classList.remove('visible');
-    error.classList.remove('visible');
 
-    const data = {
-      name:    form.querySelector('#formName').value.trim(),
-      phone:   form.querySelector('#formPhone').value.trim(),
-      service: form.querySelector('#formService').value,
-      message: form.querySelector('#formMessage').value.trim(),
-      lang:    currentLang,
-      time:    new Date().toISOString()
-    };
+    const name    = form.querySelector('#formName').value.trim();
+    const phone   = form.querySelector('#formPhone').value.trim();
+    const service = form.querySelector('#formService').value;
+    const message = form.querySelector('#formMessage').value.trim();
 
     // Validate
-    if (!data.name || !data.phone) {
-      error.textContent  = t('contact.form_error');
-      error.classList.add('visible');
-      btn.disabled = false;
-      btn.textContent = t('contact.form_submit');
-      return;
-    }
-
-    try {
-      // Simulate submission (replace with actual endpoint)
-      await new Promise(res => setTimeout(res, 800));
-      success.textContent = t('contact.form_success');
-      success.classList.add('visible');
-      form.reset();
-    } catch {
+    if (!name || !phone) {
       error.textContent = t('contact.form_error');
       error.classList.add('visible');
-    } finally {
-      btn.disabled = false;
-      btn.textContent = t('contact.form_submit');
+      return;
     }
+    error.classList.remove('visible');
+
+    // ── Save to localStorage (visible in admin panel) ────
+    const contacts = JSON.parse(localStorage.getItem('ss_contacts') || '[]');
+    contacts.push({
+      name,
+      phone,
+      service: form.querySelector('#formService').querySelector('option:checked')?.textContent || service,
+      message,
+      time: new Date().toLocaleString('ka-GE')
+    });
+    localStorage.setItem('ss_contacts', JSON.stringify(contacts));
+
+    // ── Build message text ──────────────────────────────────
+    const serviceLabel = form.querySelector('#formService')
+      .querySelector('option:checked')?.textContent || service;
+
+    const msgText = [
+      `📋 ახალი განაცხადი — Smart Security`,
+      `👤 სახელი: ${name}`,
+      `📞 ტელეფ.: ${phone}`,
+      `🔧 სერვისი: ${serviceLabel || '—'}`,
+      message ? `💬 შენიშვნა: ${message}` : '',
+      `🕐 ${new Date().toLocaleString('ka-GE')}`
+    ].filter(Boolean).join('\n');
+
+    // ── 1. WhatsApp ─────────────────────────────────────────
+    const waUrl = `https://wa.me/995595708300?text=${encodeURIComponent(msgText)}`;
+
+    // ── 2. Email (mailto) ───────────────────────────────────
+    const emailSubject = `განაცხადი — ${name} | Smart Security`;
+    const emailUrl = `mailto:info@smartsecurity.com.ge?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(msgText)}`;
+
+    // ── 3. Facebook Messenger ───────────────────────────────
+    // Opens SMsecurity page chat; pre-fill not possible from web, opens chat tab
+    const fbUrl = `https://m.me/SMsecurity`;
+
+    // Show success + action buttons
+    success.innerHTML = `
+      <div style="font-size:15px;font-weight:700;margin-bottom:14px;color:#00E676">
+        ✅ მადლობა ${name}! გამოგვიგზავნე ერთ-ერთი გზით:
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="${waUrl}" target="_blank" rel="noopener"
+           style="display:flex;align-items:center;gap:10px;background:#25D366;color:white;padding:13px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px">
+          <span style="font-size:20px">💬</span>
+          WhatsApp-ზე გამოგზავნა (რეკომ.)
+        </a>
+        <a href="${emailUrl}"
+           style="display:flex;align-items:center;gap:10px;background:rgba(0,102,255,0.15);border:1px solid rgba(0,102,255,0.4);color:white;padding:13px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px">
+          <span style="font-size:20px">📧</span>
+          ელ-ფოსტით გამოგზავნა
+        </a>
+        <a href="${fbUrl}" target="_blank" rel="noopener"
+           style="display:flex;align-items:center;gap:10px;background:rgba(24,119,242,0.15);border:1px solid rgba(24,119,242,0.4);color:white;padding:13px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px">
+          <span style="font-size:20px">💙</span>
+          Facebook Messenger-ზე
+        </a>
+      </div>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px">
+        WhatsApp ყველაზე სწრაფია — ჩვეულებრივ 15 წ-ში ვპასუხობთ.
+      </p>
+    `;
+    success.classList.add('visible');
+
+    // Auto-open WhatsApp in new tab after short delay
+    setTimeout(() => window.open(waUrl, '_blank'), 400);
+
+    form.reset();
+    btn.disabled = false;
+    btn.textContent = t('contact.form_submit');
   });
 }
 

@@ -1,12 +1,10 @@
 User-agent: *
 Allow: /
 
-# Block private/admin paths if any
+# Block admin panel from search engines
+Disallow: /admin.html
 Disallow: /admin/
 Disallow: /private/
 
 # Sitemap location
 Sitemap: https://smartsecurity.com.ge/sitemap.xml
-
-# Crawl delay for bots (optional, uncomment if needed)
-# Crawl-delay: 2

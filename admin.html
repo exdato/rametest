@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel | Smart Security</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="icon" href="assets/favicon.svg"/>
+  <style>
+    :root {
+      --bg: #0a0f1a;
+      --panel: #111827;
+      --border: rgba(0,200,255,0.15);
+      --accent: #00C8FF;
+      --blue: #0066FF;
+      --white: #f0f4ff;
+      --muted: #7a8fa6;
+      --green: #00E676;
+      --red: #FF3D3D;
+      --gold: #FFB800;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--white); font-family: 'Segoe UI', sans-serif; min-height: 100vh; }
+
+    /* ── LOGIN ── */
+    #loginScreen {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 50% 50%, rgba(0,102,255,0.1) 0%, transparent 70%);
+    }
+    .login-box {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 16px; padding: 48px 40px; width: 100%; max-width: 380px;
+      text-align: center;
+    }
+    .login-logo { font-size: 48px; margin-bottom: 16px; }
+    .login-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    .login-sub { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .login-input {
+      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 16px; color: var(--white); font-size: 15px;
+      margin-bottom: 14px; outline: none; transition: border-color 0.3s;
+    }
+    .login-input:focus { border-color: var(--accent); }
+    .login-btn {
+      width: 100%; background: linear-gradient(90deg, var(--blue), var(--accent));
+      color: white; border: none; border-radius: var(--radius); padding: 14px;
+      font-size: 15px; font-weight: 700; cursor: pointer; transition: opacity 0.3s;
+    }
+    .login-btn:hover { opacity: 0.85; }
+    .login-error { color: var(--red); font-size: 13px; margin-top: 10px; min-height: 18px; }
+
+    /* ── ADMIN LAYOUT ── */
+    #adminScreen { display: none; }
+
+    .admin-header {
+      background: var(--panel); border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 60px; display: flex; align-items: center;
+      justify-content: space-between; position: sticky; top: 0; z-index: 100;
+    }
+    .admin-header-left { display: flex; align-items: center; gap: 12px; }
+    .admin-logo { font-size: 20px; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+    .admin-badge { background: rgba(0,200,255,0.1); border: 1px solid var(--border); color: var(--accent); font-size: 11px; padding: 3px 10px; border-radius: 100px; font-weight: 700; }
+    .logout-btn { background: rgba(255,61,61,0.1); border: 1px solid rgba(255,61,61,0.3); color: var(--red); padding: 7px 16px; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: 600; }
+    .logout-btn:hover { background: rgba(255,61,61,0.2); }
+
+    .admin-layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 60px); }
+
+    /* Sidebar */
+    .admin-sidebar {
+      background: var(--panel); border-right: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .sidebar-section { font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; padding: 8px 20px; margin-top: 12px; }
+    .sidebar-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 20px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.2s; border-left: 2px solid transparent;
+    }
+    .sidebar-item:hover { background: rgba(0,200,255,0.04); color: var(--white); }
+    .sidebar-item.active { background: rgba(0,200,255,0.08); color: var(--accent); border-left-color: var(--accent); }
+    .sidebar-item .icon { font-size: 16px; }
+
+    /* Main content */
+    .admin-main { padding: 32px; overflow-y: auto; }
+    .admin-page { display: none; }
+    .admin-page.active { display: block; }
+
+    /* Cards */
+    .admin-card {
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px; margin-bottom: 20px;
+    }
+    .admin-card-title {
+      font-size: 16px; font-weight: 700; margin-bottom: 18px;
+      display: flex; align-items: center; gap: 8px; color: var(--white);
+    }
+    .admin-card-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    /* Form elements */
+    .field-group { margin-bottom: 16px; }
+    .field-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+    .field-input, .field-textarea {
+      width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 8px; padding: 11px 14px; color: var(--white); font-size: 14px;
+      outline: none; transition: border-color 0.3s; font-family: inherit;
+    }
+    .field-input:focus, .field-textarea:focus { border-color: var(--accent); }
+    .field-textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+
+    /* Buttons */
+    .btn-save {
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      color: white; border: none; border-radius: 8px; padding: 11px 22px;
+      font-size: 14px; font-weight: 700; cursor: pointer; transition: opacity 0.3s;
+    }
+    .btn-save:hover { opacity: 0.85; }
+    .btn-secondary {
+      background: rgba(0,200,255,0.08); border: 1px solid var(--border);
+      color: var(--accent); border-radius: 8px; padding: 10px 18px;
+      font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(0,200,255,0.15); }
+
+    .save-toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      background: #00E676; color: #000; padding: 12px 24px; border-radius: 100px;
+      font-weight: 700; font-size: 14px; z-index: 9999;
+      opacity: 0; transition: opacity 0.3s; pointer-events: none;
+    }
+    .save-toast.show { opacity: 1; }
+
+    /* Grid layouts */
+    .fields-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fields-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    /* Stats overview */
+    .stats-overview { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 28px; }
+    .stat-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 900; color: var(--accent); }
+    .stat-lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+    /* Contact log */
+    .contact-item {
+      background: rgba(0,200,255,0.03); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px; margin-bottom: 12px;
+    }
+    .contact-item-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .contact-name { font-weight: 700; font-size: 15px; }
+    .contact-time { font-size: 12px; color: var(--muted); }
+    .contact-detail { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .contact-actions { display: flex; gap: 8px; margin-top: 10px; }
+    .contact-act-btn {
+      font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer;
+      text-decoration: none; font-weight: 600; border: none;
+    }
+    .btn-wa  { background: #25D36622; border: 1px solid #25D36655; color: #25D366; }
+    .btn-del { background: rgba(255,61,61,0.1); border: 1px solid rgba(255,61,61,0.3); color: var(--red); }
+
+    /* Section header */
+    .page-header { margin-bottom: 28px; }
+    .page-title { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+    .page-sub { font-size: 14px; color: var(--muted); }
+
+    @media(max-width:900px) {
+      .admin-layout { grid-template-columns: 1fr; }
+      .admin-sidebar { display: none; }
+      .fields-2col, .fields-3col, .stats-overview { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     LOGIN SCREEN
+════════════════════════════════════════ -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">🛡️</div>
+    <div class="login-title">Smart Security</div>
+    <div class="login-sub">Admin Panel — შეიყვანე პაროლი</div>
+    <input type="password" class="login-input" id="loginPass" placeholder="პაროლი"
+           onkeydown="if(event.key==='Enter') doLogin()"/>
+    <button class="login-btn" onclick="doLogin()">შესვლა →</button>
+    <div class="login-error" id="loginErr"></div>
+    <p style="font-size:11px;color:var(--muted);margin-top:20px">
+      🔒 ეს გვერდი არ ინდექსირდება Google-ში
+    </p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ADMIN SCREEN
+════════════════════════════════════════ -->
+<div id="adminScreen">
+
+  <!-- Header -->
+  <div class="admin-header">
+    <div class="admin-header-left">
+      <div class="admin-logo">⚙ Smart Security</div>
+      <div class="admin-badge">Admin Panel</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="font-size:12px;color:var(--muted)" id="adminTime"></span>
+      <button class="logout-btn" onclick="doLogout()">გასვლა</button>
+    </div>
+  </div>
+
+  <div class="admin-layout">
+
+    <!-- Sidebar -->
+    <div class="admin-sidebar">
+      <div class="sidebar-section">მენიუ</div>
+      <div class="sidebar-item active" onclick="showPage('dashboard',this)">
+        <span class="icon">📊</span> მიმოხილვა
+      </div>
+      <div class="sidebar-item" onclick="showPage('contacts',this)">
+        <span class="icon">📥</span> განაცხადები
+      </div>
+
+      <div class="sidebar-section">ტექსტები</div>
+      <div class="sidebar-item" onclick="showPage('texts-hero',this)">
+        <span class="icon">🏠</span> Hero სექცია
+      </div>
+      <div class="sidebar-item" onclick="showPage('texts-about',this)">
+        <span class="icon">ℹ️</span> ჩვენ შ. / Why Us
+      </div>
+      <div class="sidebar-item" onclick="showPage('texts-contact',this)">
+        <span class="icon">📞</span> კონტაქტი
+      </div>
+      <div class="sidebar-item" onclick="showPage('texts-footer',this)">
+        <span class="icon">🔻</span> Footer
+      </div>
+
+      <div class="sidebar-section">პარამეტრები</div>
+      <div class="sidebar-item" onclick="showPage('settings',this)">
+        <span class="icon">⚙️</span> კომ. ინფო / კ-ტი
+      </div>
+      <div class="sidebar-item" onclick="showPage('social',this)">
+        <span class="icon">📱</span> სოც. ქ-ბი
+      </div>
+
+      <div style="padding:20px;margin-top:20px;border-top:1px solid var(--border)">
+        <a href="index.html" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);text-decoration:none" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">
+          <span>🌐</span> საიტის ნახვა →
+        </a>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="admin-main">
+
+      <!-- ── DASHBOARD ── -->
+      <div class="admin-page active" id="page-dashboard">
+        <div class="page-header">
+          <div class="page-title">📊 მიმოხილვა</div>
+          <div class="page-sub">Smart Security Admin Panel — <span id="dashDate"></span></div>
+        </div>
+
+        <div class="stats-overview">
+          <div class="stat-card">
+            <div class="stat-num" id="statContacts">0</div>
+            <div class="stat-lbl">განაცხადი</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">7</div>
+            <div class="stat-lbl">სერვისი</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-lbl">ენა</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" id="statEdits">0</div>
+            <div class="stat-lbl">ცვლილება</div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span> სწრაფი მოქმედება</div>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <button class="btn-secondary" onclick="showPage('contacts', document.querySelector('[onclick*=contacts]'))">📥 განაცხადები</button>
+            <button class="btn-secondary" onclick="showPage('texts-hero', document.querySelector('[onclick*=texts-hero]'))">✏️ Hero ტ-ბი</button>
+            <button class="btn-secondary" onclick="showPage('settings', document.querySelector('[onclick*=settings]'))">⚙️ კ. ინფო</button>
+            <a href="index.html" target="_blank" class="btn-secondary" style="text-decoration:none">🌐 საიტი →</a>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span> ბოლო 3 განაცხადი</div>
+          <div id="dashRecentContacts">
+            <p style="color:var(--muted);font-size:14px">განაცხადები ჯერ არ არის. როდესაც კ-ი ფ-ას გ-ავ-ავს, აქ ჩანს.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CONTACTS ── -->
+      <div class="admin-page" id="page-contacts">
+        <div class="page-header">
+          <div class="page-title">📥 კ-ბ. განაცხადები</div>
+          <div class="page-sub">კ-ი ფ-ი-ან შემოსული განაცხადები</div>
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:20px">
+          <button class="btn-secondary" onclick="clearContacts()">🗑 ყ-ა გ-ა</button>
+          <button class="btn-secondary" onclick="exportContacts()">📤 CSV ა-ი</button>
+        </div>
+        <div id="contactsList">
+          <div class="admin-card">
+            <p style="color:var(--muted);font-size:14px;text-align:center;padding:20px">
+              განაცხადები ჯერ არ არის.<br>
+              <span style="font-size:12px">კ. ფ-ი-ი გ-ა → WhatsApp ა-ი-ა + აქ ი-ება.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TEXTS: HERO ── -->
+      <div class="admin-page" id="page-texts-hero">
+        <div class="page-header">
+          <div class="page-title">🏠 Hero სექციის ტ-ბი</div>
+          <div class="page-sub">მთ. გ-ის ზ-ა ტ-ბი — ქ-ი ე-ი</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span>🇬🇪 ქ. ტ-ბი</div>
+          <div class="field-group">
+            <label class="field-label">Hero სათ-ი (ძ. ს.)</label>
+            <input class="field-input" id="t_hero_title_ka" value="უსაფრთხოება, რომელსაც"/>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Hero სათ-ი (მ. ს. — ა.)</label>
+            <input class="field-input" id="t_hero_title2_ka" value="შეგიძლია ენდო"/>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Hero ქ-ი</label>
+            <textarea class="field-textarea" id="t_hero_desc_ka">საქართველოს წამყვანი კომპანია CCTV, სიგნალიზაცია, სახანძრო სისტემები...</textarea>
+          </div>
+          <div class="fields-2col">
+            <div class="field-group">
+              <label class="field-label">CTA ღ. #1</label>
+              <input class="field-input" id="t_hero_cta1_ka" value="კონსულტაცია →"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">CTA ღ. #2</label>
+              <input class="field-input" id="t_hero_cta2_ka" value="📞 დარეკე"/>
+            </div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span>🇬🇧 EN</div>
+          <div class="field-group">
+            <label class="field-label">Hero Title (line 1)</label>
+            <input class="field-input" id="t_hero_title_en" value="Security You Can"/>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Hero Title (line 2 — accent)</label>
+            <input class="field-input" id="t_hero_title2_en" value="Actually Trust"/>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Description</label>
+            <textarea class="field-textarea" id="t_hero_desc_en">Georgia's leading company for CCTV, alarms, fire systems...</textarea>
+          </div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span>🇷🇺 RU</div>
+          <div class="field-group">
+            <label class="field-label">Заголовок (строка 1)</label>
+            <input class="field-input" id="t_hero_title_ru" value="Безопасность, которой"/>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Заголовок (строка 2)</label>
+            <input class="field-input" id="t_hero_title2_ru" value="можно доверять"/>
+          </div>
+        </div>
+        <button class="btn-save" onclick="saveTexts('hero')">💾 შ. → translations.json</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px">⚠️ შ-ა ბ-ში ი-ება. საიტის განახ. — გ-ა გ. ბ-ი.</p>
+      </div>
+
+      <!-- ── TEXTS: ABOUT ── -->
+      <div class="admin-page" id="page-texts-about">
+        <div class="page-header">
+          <div class="page-title">ℹ️ Why Us სექციის ტ-ბი</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span>🇬🇪 სა-ო ი-ბი</div>
+          <div class="fields-2col">
+            <div class="field-group">
+              <label class="field-label">სტ. #1 სათ.</label>
+              <input class="field-input" id="t_why1_ka" value="10+ წლის გამ."/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">სტ. #2 სათ.</label>
+              <input class="field-input" id="t_why2_ka" value="სერტ. სპ-ბი"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">სტ. #3 სათ.</label>
+              <input class="field-input" id="t_why3_ka" value="24/7 მ-ა"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">სტ. #4 სათ.</label>
+              <input class="field-input" id="t_why4_ka" value="2 წ. გ-ა"/>
+            </div>
+          </div>
+        </div>
+        <button class="btn-save" onclick="saveTexts('about')">💾 შ-ა</button>
+      </div>
+
+      <!-- ── TEXTS: CONTACT ── -->
+      <div class="admin-page" id="page-texts-contact">
+        <div class="page-header">
+          <div class="page-title">📞 კ-ი სექ. ტ-ბი</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span>🇬🇪 კ-ი ტ-ბი</div>
+          <div class="field-group">
+            <label class="field-label">სექ. სათ.</label>
+            <input class="field-input" id="t_contact_title_ka" value="დაგვიკ. — უფ. კ-ა"/>
+          </div>
+          <div class="field-group">
+            <label class="field-label">სექ. ქ-ი</label>
+            <textarea class="field-textarea" id="t_contact_desc_ka">გ. ო-ი ა-ი ი-ა-ი, ი-ი ი. ი-ა-ი.</textarea>
+          </div>
+          <div class="field-group">
+            <label class="field-label">ფ-ი ბ-ი ტ-ბი</label>
+            <input class="field-input" id="t_contact_form_title_ka" value="განაცხადის ფ-ი"/>
+          </div>
+        </div>
+        <button class="btn-save" onclick="saveTexts('contact')">💾 შ-ა</button>
+      </div>
+
+      <!-- ── TEXTS: FOOTER ── -->
+      <div class="admin-page" id="page-texts-footer">
+        <div class="page-header">
+          <div class="page-title">🔻 Footer-ის ტ-ბი</div>
+        </div>
+        <div class="admin-card">
+          <div class="field-group">
+            <label class="field-label">ბ-ი ქ-ი</label>
+            <textarea class="field-textarea" id="t_footer_desc_ka">საქ-ლ-ის წ-ი ს-ო სისტ-ბ-ი ი-ა...</textarea>
+          </div>
+          <div class="field-group">
+            <label class="field-label">© ც-ი</label>
+            <input class="field-input" id="t_footer_copy" value="ყველა უფლება დაცულია."/>
+          </div>
+        </div>
+        <button class="btn-save" onclick="saveTexts('footer')">💾 შ-ა</button>
+      </div>
+
+      <!-- ── SETTINGS ── -->
+      <div class="admin-page" id="page-settings">
+        <div class="page-header">
+          <div class="page-title">⚙️ კ. ინფ. / კ-ტ-ი</div>
+          <div class="page-sub">ტ., Email, მ. — ი. ი-ება მთ. საიტზე</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span>კ. ი-ო</div>
+          <div class="fields-2col">
+            <div class="field-group">
+              <label class="field-label">კ. სახ.</label>
+              <input class="field-input" id="s_name" value="Smart Security"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">ვ. URL</label>
+              <input class="field-input" id="s_website" value="https://smartsecurity.com.ge"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">📞 ტ-ი #1</label>
+              <input class="field-input" id="s_phone1" value="+995 595 70 83 00"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">📞 ტ-ი #2 (ო-ი)</label>
+              <input class="field-input" id="s_phone2" placeholder="ო-ი..."/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">📧 Email</label>
+              <input class="field-input" id="s_email" value="info@smartsecurity.com.ge"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">📍 მ-ი</label>
+              <input class="field-input" id="s_address" value="თბილისი, საქართველო"/>
+            </div>
+          </div>
+          <div class="fields-3col" style="margin-top:8px">
+            <div class="field-group">
+              <label class="field-label">✅ პ-ბი (ი-ობ.)</label>
+              <input class="field-input" id="s_stat1" value="500+"/>
+              <input class="field-input" style="margin-top:8px" id="s_stat1_lbl" value="ი-ი პ."/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">✅ გ-ა</label>
+              <input class="field-input" id="s_stat2" value="10+"/>
+              <input class="field-input" style="margin-top:8px" id="s_stat2_lbl" value="წ. გ-ა"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">✅ მ-ა</label>
+              <input class="field-input" id="s_stat3" value="24/7"/>
+              <input class="field-input" style="margin-top:8px" id="s_stat3_lbl" value="მ-ა"/>
+            </div>
+          </div>
+        </div>
+        <button class="btn-save" onclick="saveSettings()">💾 შ. ი-ება localStorage-ში</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px">⚠️ ი-ება ბ-ი ი-ბ-ი — ი. ბ-ი-ი ყ-ა ადმ. ი-ა გ-ო-ა.</p>
+      </div>
+
+      <!-- ── SOCIAL ── -->
+      <div class="admin-page" id="page-social">
+        <div class="page-header">
+          <div class="page-title">📱 სოც. ქ-ბი</div>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span class="dot"></span>ბ-ბი</div>
+          <div class="fields-2col">
+            <div class="field-group">
+              <label class="field-label">💙 Facebook URL</label>
+              <input class="field-input" id="s_fb" value="https://www.facebook.com/SMsecurity/"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">📸 Instagram URL</label>
+              <input class="field-input" id="s_ig" value="https://instagram.com/"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">💬 WhatsApp ნ.</label>
+              <input class="field-input" id="s_wa" value="995595708300"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">✈️ Telegram</label>
+              <input class="field-input" id="s_tg" value="https://t.me/"/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">▶️ YouTube</label>
+              <input class="field-input" id="s_yt" placeholder="https://youtube.com/..."/>
+            </div>
+            <div class="field-group">
+              <label class="field-label">💼 LinkedIn</label>
+              <input class="field-input" id="s_li" placeholder="https://linkedin.com/..."/>
+            </div>
+          </div>
+          <button class="btn-save" style="margin-top:8px" onclick="saveSocial()">💾 შ-ა</button>
+        </div>
+      </div>
+
+    </div><!-- /admin-main -->
+  </div><!-- /admin-layout -->
+</div><!-- /adminScreen -->
+
+<div class="save-toast" id="saveToast">✅ შ-ა!</div>
+
+<script>
+// ════════════════════════════════════════
+// CONFIG
+// ════════════════════════════════════════
+const ADMIN_PASSWORD = 'smartsec2025'; // ← შეცვალე!
+const STORAGE_KEY    = 'ss_admin_auth';
+const DATA_KEY       = 'ss_admin_data';
+const CONTACTS_KEY   = 'ss_contacts';
+
+// ════════════════════════════════════════
+// AUTH
+// ════════════════════════════════════════
+function doLogin() {
+  const pass = document.getElementById('loginPass').value;
+  if (pass === ADMIN_PASSWORD) {
+    sessionStorage.setItem(STORAGE_KEY, '1');
+    showAdmin();
+  } else {
+    const err = document.getElementById('loginErr');
+    err.textContent = '❌ პ-ი ა-ა';
+    document.getElementById('loginPass').value = '';
+    setTimeout(()=>err.textContent='', 2000);
+  }
+}
+function doLogout() {
+  sessionStorage.removeItem(STORAGE_KEY);
+  location.reload();
+}
+function checkAuth() {
+  if (sessionStorage.getItem(STORAGE_KEY) === '1') showAdmin();
+}
+
+// ════════════════════════════════════════
+// SHOW ADMIN
+// ════════════════════════════════════════
+function showAdmin() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminScreen').style.display = 'block';
+  loadAllData();
+  updateClock();
+  setInterval(updateClock, 60000);
+  renderContacts();
+  updateStats();
+}
+function updateClock() {
+  const now = new Date();
+  document.getElementById('adminTime').textContent =
+    now.toLocaleString('ka-GE', { weekday:'short', hour:'2-digit', minute:'2-digit' });
+  document.getElementById('dashDate').textContent =
+    now.toLocaleDateString('ka-GE', { year:'numeric', month:'long', day:'numeric' });
+}
+
+// ════════════════════════════════════════
+// PAGE NAVIGATION
+// ════════════════════════════════════════
+function showPage(pageId, el) {
+  document.querySelectorAll('.admin-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  if (el) el.classList.add('active');
+}
+
+// ════════════════════════════════════════
+// DATA LOAD / SAVE
+// ════════════════════════════════════════
+function loadAllData() {
+  const saved = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
+
+  // Settings
+  if (saved.settings) {
+    Object.entries(saved.settings).forEach(([k,v]) => {
+      const el = document.getElementById(k);
+      if (el) el.value = v;
+    });
+  }
+  // Texts
+  if (saved.texts) {
+    Object.entries(saved.texts).forEach(([k,v]) => {
+      const el = document.getElementById(k);
+      if (el) el.value = v;
+    });
+  }
+  // Social
+  if (saved.social) {
+    Object.entries(saved.social).forEach(([k,v]) => {
+      const el = document.getElementById(k);
+      if (el) el.value = v;
+    });
+  }
+}
+
+function saveTexts(section) {
+  const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
+  if (!data.texts) data.texts = {};
+
+  document.querySelectorAll(`#page-texts-${section} [id^="t_"]`).forEach(el => {
+    data.texts[el.id] = el.value;
+  });
+  data.editCount = (data.editCount || 0) + 1;
+  localStorage.setItem(DATA_KEY, JSON.stringify(data));
+  showToast('✅ შ-ა!');
+  updateStats();
+}
+
+function saveSettings() {
+  const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
+  if (!data.settings) data.settings = {};
+  document.querySelectorAll('#page-settings [id^="s_"]').forEach(el => {
+    data.settings[el.id] = el.value;
+  });
+  data.editCount = (data.editCount || 0) + 1;
+  localStorage.setItem(DATA_KEY, JSON.stringify(data));
+  showToast('✅ შ-ა!');
+  updateStats();
+}
+
+function saveSocial() {
+  const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
+  if (!data.social) data.social = {};
+  document.querySelectorAll('#page-social [id^="s_"]').forEach(el => {
+    data.social[el.id] = el.value;
+  });
+  data.editCount = (data.editCount || 0) + 1;
+  localStorage.setItem(DATA_KEY, JSON.stringify(data));
+  showToast('✅ შ-ა!');
+}
+
+// ════════════════════════════════════════
+// CONTACTS
+// ════════════════════════════════════════
+function renderContacts() {
+  const contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+  const list = document.getElementById('contactsList');
+  const dash = document.getElementById('dashRecentContacts');
+
+  if (!contacts.length) {
+    list.innerHTML = `<div class="admin-card"><p style="color:var(--muted);font-size:14px;text-align:center;padding:20px">განაცხადები ჯ. ა. — კ. ფ-ი-ი გ-ა, ა. ი-ება.</p></div>`;
+    dash.innerHTML = `<p style="color:var(--muted);font-size:14px">ჯ. ა.</p>`;
+    return;
+  }
+
+  const html = contacts.slice().reverse().map((c,i) => `
+    <div class="contact-item" id="ci-${i}">
+      <div class="contact-item-header">
+        <div class="contact-name">${c.name} · ${c.phone}</div>
+        <div class="contact-time">${c.time || ''}</div>
+      </div>
+      <div class="contact-detail">
+        ${c.service ? `🔧 ${c.service} &nbsp;` : ''}
+        ${c.message ? `💬 ${c.message}` : ''}
+      </div>
+      <div class="contact-actions">
+        <a class="contact-act-btn btn-wa"
+           href="https://wa.me/${(c.phone||'').replace(/\D/g,'')}?text=${encodeURIComponent('გ! Smart Security. კ-ა მ. — ' + c.name)}"
+           target="_blank">💬 WA-ი პ.</a>
+        <button class="contact-act-btn btn-del" onclick="deleteContact(${contacts.length-1-i})">🗑</button>
+      </div>
+    </div>
+  `).join('');
+
+  list.innerHTML = html;
+  dash.innerHTML = contacts.slice(-3).reverse().map(c=>`
+    <div style="padding:10px 0;border-bottom:1px solid var(--border)">
+      <strong>${c.name}</strong> · ${c.phone}
+      <span style="font-size:12px;color:var(--muted);margin-left:8px">${c.time||''}</span>
+    </div>
+  `).join('');
+}
+
+function deleteContact(idx) {
+  const contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+  contacts.splice(idx, 1);
+  localStorage.setItem(CONTACTS_KEY, JSON.stringify(contacts));
+  renderContacts();
+  updateStats();
+}
+
+function clearContacts() {
+  if (confirm('ყ-ა განაცხადი გ-ო?')) {
+    localStorage.removeItem(CONTACTS_KEY);
+    renderContacts();
+    updateStats();
+  }
+}
+
+function exportContacts() {
+  const contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+  if (!contacts.length) { alert('ჯ. ა.'); return; }
+  const csv = ['სახელი,ტ.,სერვ.,შ.,დ.'].concat(
+    contacts.map(c => `"${c.name}","${c.phone}","${c.service||''}","${c.message||''}","${c.time||''}"`)
+  ).join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent('\ufeff'+csv);
+  a.download = `smart-security-contacts-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+function updateStats() {
+  const contacts = JSON.parse(localStorage.getItem(CONTACTS_KEY) || '[]');
+  const data = JSON.parse(localStorage.getItem(DATA_KEY) || '{}');
+  document.getElementById('statContacts').textContent = contacts.length;
+  document.getElementById('statEdits').textContent = data.editCount || 0;
+}
+
+// ════════════════════════════════════════
+// TOAST
+// ════════════════════════════════════════
+function showToast(msg) {
+  const t = document.getElementById('saveToast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ════════════════════════════════════════
+// KEYBOARD
+// ════════════════════════════════════════
+document.addEventListener('keydown', e => {
+  if (e.ctrlKey && e.key === 's') {
+    e.preventDefault();
+    const activePage = document.querySelector('.admin-page.active')?.id || '';
+    if (activePage.includes('hero'))    saveTexts('hero');
+    else if (activePage.includes('about'))   saveTexts('about');
+    else if (activePage.includes('contact')) saveTexts('contact');
+    else if (activePage.includes('footer'))  saveTexts('footer');
+    else if (activePage.includes('settings')) saveSettings();
+    else if (activePage.includes('social'))  saveSocial();
+    else showToast('ი. გ. მ. ა-ა Ctrl+S');
+  }
+});
+
+// ════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════
+checkAuth();
+</script>
+</body>
+</html>
