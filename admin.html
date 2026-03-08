@@ -235,10 +235,10 @@
 
       <div class="sidebar-section">პარამეტრები</div>
       <div class="sidebar-item" onclick="showPage('settings',this)">
-        <span class="icon">⚙️</span> კომ. ინფო / კ-ტი
+        <span class="icon">⚙️</span> კომპანიის ინფო / კონტაქტი
       </div>
       <div class="sidebar-item" onclick="showPage('social',this)">
-        <span class="icon">📱</span> სოც. ქ-ბი
+        <span class="icon">📱</span> სოციალური ქსელები
       </div>
 
       <div style="padding:20px;margin-top:20px;border-top:1px solid var(--border)">
@@ -281,7 +281,7 @@
           <div class="admin-card-title"><span class="dot"></span> სწრაფი მოქმედება</div>
           <div style="display:flex;flex-wrap:wrap;gap:12px">
             <button class="btn-secondary" onclick="showPage('contacts', document.querySelector('[onclick*=contacts]'))">📥 განაცხადები</button>
-            <button class="btn-secondary" onclick="showPage('texts-hero', document.querySelector('[onclick*=texts-hero]'))">✏️ Hero ტ-ბი</button>
+            <button class="btn-secondary" onclick="showPage('texts-hero', document.querySelector('[onclick*=texts-hero]'))">✏️ Hero ტექსტები</button>
             <button class="btn-secondary" onclick="showPage('settings', document.querySelector('[onclick*=settings]'))">⚙️ კ. ინფო</button>
             <a href="index.html" target="_blank" class="btn-secondary" style="text-decoration:none">🌐 საიტი →</a>
           </div>
@@ -290,7 +290,7 @@
         <div class="admin-card">
           <div class="admin-card-title"><span class="dot"></span> ბოლო 3 განაცხადი</div>
           <div id="dashRecentContacts">
-            <p style="color:var(--muted);font-size:14px">განაცხადები ჯერ არ არის. როდესაც კ-ი ფ-ას გ-ავ-ავს, აქ ჩანს.</p>
+            <p style="color:var(--muted);font-size:14px">განაცხადები ჯერ არ არის. როდესაც კლიენტი ფორმას გამოაგზავნის, აქ ჩანს.</p>
           </div>
         </div>
       </div>
@@ -298,18 +298,18 @@
       <!-- ── CONTACTS ── -->
       <div class="admin-page" id="page-contacts">
         <div class="page-header">
-          <div class="page-title">📥 კ-ბ. განაცხადები</div>
-          <div class="page-sub">კ-ი ფ-ი-ან შემოსული განაცხადები</div>
+          <div class="page-title">📥 კლიენტების განაცხადები</div>
+          <div class="page-sub">კლიენტებისგან შემოსული განაცხადები</div>
         </div>
         <div style="display:flex;gap:12px;margin-bottom:20px">
-          <button class="btn-secondary" onclick="clearContacts()">🗑 ყ-ა გ-ა</button>
-          <button class="btn-secondary" onclick="exportContacts()">📤 CSV ა-ი</button>
+          <button class="btn-secondary" onclick="clearContacts()">🗑 ყველა გასუფთავება</button>
+          <button class="btn-secondary" onclick="exportContacts()">📤 CSV ექსპორტი</button>
         </div>
         <div id="contactsList">
           <div class="admin-card">
             <p style="color:var(--muted);font-size:14px;text-align:center;padding:20px">
               განაცხადები ჯერ არ არის.<br>
-              <span style="font-size:12px">კ. ფ-ი-ი გ-ა → WhatsApp ა-ი-ა + აქ ი-ება.</span>
+              <span style="font-size:12px">კლიენტი ფორმის გაგზავნა → WhatsApp-ზე გადარდება + აქ ინახება.</span>
             </p>
           </div>
         </div>
@@ -318,21 +318,21 @@
       <!-- ── TEXTS: HERO ── -->
       <div class="admin-page" id="page-texts-hero">
         <div class="page-header">
-          <div class="page-title">🏠 Hero სექციის ტ-ბი</div>
-          <div class="page-sub">მთ. გ-ის ზ-ა ტ-ბი — ქ-ი ე-ი</div>
+          <div class="page-title">🏠 Hero სექციის ტექსტები</div>
+          <div class="page-sub">მთავარი გვერდის ზედა ტექსტები — ქართული ენა</div>
         </div>
         <div class="admin-card">
-          <div class="admin-card-title"><span class="dot"></span>🇬🇪 ქ. ტ-ბი</div>
+          <div class="admin-card-title"><span class="dot"></span>🇬🇪 ქართული ტექსტები</div>
           <div class="field-group">
-            <label class="field-label">Hero სათ-ი (ძ. ს.)</label>
+            <label class="field-label">Hero სათაური (ძირითადი სტრიქონი)</label>
             <input class="field-input" id="t_hero_title_ka" value="უსაფრთხოება, რომელსაც"/>
           </div>
           <div class="field-group">
-            <label class="field-label">Hero სათ-ი (მ. ს. — ა.)</label>
+            <label class="field-label">Hero სათაური (მეორე სტრიქონი — ACCENT)</label>
             <input class="field-input" id="t_hero_title2_ka" value="შეგიძლია ენდო"/>
           </div>
           <div class="field-group">
-            <label class="field-label">Hero ქ-ი</label>
+            <label class="field-label">Hero ქვეტექსტი</label>
             <textarea class="field-textarea" id="t_hero_desc_ka">საქართველოს წამყვანი კომპანია CCTV, სიგნალიზაცია, სახანძრო სისტემები...</textarea>
           </div>
           <div class="fields-2col">
@@ -373,16 +373,16 @@
           </div>
         </div>
         <button class="btn-save" onclick="saveTexts('hero')">💾 შ. → translations.json</button>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px">⚠️ შ-ა ბ-ში ი-ება. საიტის განახ. — გ-ა გ. ბ-ი.</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px">⚠️ შენახვა ბრაუზერში ინახება. საიტის განახლება — გვერდი გადატვირთე ბრაუზერში.</p>
       </div>
 
       <!-- ── TEXTS: ABOUT ── -->
       <div class="admin-page" id="page-texts-about">
         <div class="page-header">
-          <div class="page-title">ℹ️ Why Us სექციის ტ-ბი</div>
+          <div class="page-title">ℹ️ Why Us სექციის ტექსტები</div>
         </div>
         <div class="admin-card">
-          <div class="admin-card-title"><span class="dot"></span>🇬🇪 სა-ო ი-ბი</div>
+          <div class="admin-card-title"><span class="dot"></span>🇬🇪 სარეკლამო ინფორმაცია</div>
           <div class="fields-2col">
             <div class="field-group">
               <label class="field-label">სტ. #1 სათ.</label>
@@ -390,70 +390,70 @@
             </div>
             <div class="field-group">
               <label class="field-label">სტ. #2 სათ.</label>
-              <input class="field-input" id="t_why2_ka" value="სერტ. სპ-ბი"/>
+              <input class="field-input" id="t_why2_ka" value="სერტიფიცირებული სპეციალისტები"/>
             </div>
             <div class="field-group">
               <label class="field-label">სტ. #3 სათ.</label>
-              <input class="field-input" id="t_why3_ka" value="24/7 მ-ა"/>
+              <input class="field-input" id="t_why3_ka" value="24/7 მხარდაჭერა"/>
             </div>
             <div class="field-group">
               <label class="field-label">სტ. #4 სათ.</label>
-              <input class="field-input" id="t_why4_ka" value="2 წ. გ-ა"/>
+              <input class="field-input" id="t_why4_ka" value="2 წლის გარანტია"/>
             </div>
           </div>
         </div>
-        <button class="btn-save" onclick="saveTexts('about')">💾 შ-ა</button>
+        <button class="btn-save" onclick="saveTexts('about')">💾 შენახვა</button>
       </div>
 
       <!-- ── TEXTS: CONTACT ── -->
       <div class="admin-page" id="page-texts-contact">
         <div class="page-header">
-          <div class="page-title">📞 კ-ი სექ. ტ-ბი</div>
+          <div class="page-title">📞 კონტაქტის სექციის ტექსტები</div>
         </div>
         <div class="admin-card">
-          <div class="admin-card-title"><span class="dot"></span>🇬🇪 კ-ი ტ-ბი</div>
+          <div class="admin-card-title"><span class="dot"></span>🇬🇪 კონტაქტის ტექსტები</div>
           <div class="field-group">
             <label class="field-label">სექ. სათ.</label>
-            <input class="field-input" id="t_contact_title_ka" value="დაგვიკ. — უფ. კ-ა"/>
+            <input class="field-input" id="t_contact_title_ka" value="დაგვიკავშირდით — უფასო კონსულტაცია"/>
           </div>
           <div class="field-group">
-            <label class="field-label">სექ. ქ-ი</label>
-            <textarea class="field-textarea" id="t_contact_desc_ka">გ. ო-ი ა-ი ი-ა-ი, ი-ი ი. ი-ა-ი.</textarea>
+            <label class="field-label">სექციის ქვეტექსტი</label>
+            <textarea class="field-textarea" id="t_contact_desc_ka">გვიამბეთ ობიექტის შესახებ — ჩვენ საუკეთესო გადაწყვეტას შევთავაზებთ.</textarea>
           </div>
           <div class="field-group">
-            <label class="field-label">ფ-ი ბ-ი ტ-ბი</label>
-            <input class="field-input" id="t_contact_form_title_ka" value="განაცხადის ფ-ი"/>
+            <label class="field-label">ფორმის ბოლო ტექსტები</label>
+            <input class="field-input" id="t_contact_form_title_ka" value="განაცხადის ფორმა"/>
           </div>
         </div>
-        <button class="btn-save" onclick="saveTexts('contact')">💾 შ-ა</button>
+        <button class="btn-save" onclick="saveTexts('contact')">💾 შენახვა</button>
       </div>
 
       <!-- ── TEXTS: FOOTER ── -->
       <div class="admin-page" id="page-texts-footer">
         <div class="page-header">
-          <div class="page-title">🔻 Footer-ის ტ-ბი</div>
+          <div class="page-title">🔻 Footer-ის ტექსტები</div>
         </div>
         <div class="admin-card">
           <div class="field-group">
-            <label class="field-label">ბ-ი ქ-ი</label>
-            <textarea class="field-textarea" id="t_footer_desc_ka">საქ-ლ-ის წ-ი ს-ო სისტ-ბ-ი ი-ა...</textarea>
+            <label class="field-label">ბრენდის ქვეტექსტი</label>
+            <textarea class="field-textarea" id="t_footer_desc_ka">საქართველოს წამყვანი უსაფრთხოების სისტემები...</textarea>
           </div>
           <div class="field-group">
-            <label class="field-label">© ც-ი</label>
+            <label class="field-label">© წლის ციფრი</label>
             <input class="field-input" id="t_footer_copy" value="ყველა უფლება დაცულია."/>
           </div>
         </div>
-        <button class="btn-save" onclick="saveTexts('footer')">💾 შ-ა</button>
+        <button class="btn-save" onclick="saveTexts('footer')">💾 შენახვა</button>
       </div>
 
       <!-- ── SETTINGS ── -->
       <div class="admin-page" id="page-settings">
         <div class="page-header">
-          <div class="page-title">⚙️ კ. ინფ. / კ-ტ-ი</div>
-          <div class="page-sub">ტ., Email, მ. — ი. ი-ება მთ. საიტზე</div>
+          <div class="page-title">⚙️ კომპანიის ინფო / კონტაქტი</div>
+          <div class="page-sub">ტელეფონი, Email, მისამართი — ინახება მთლიან საიტზე</div>
         </div>
         <div class="admin-card">
-          <div class="admin-card-title"><span class="dot"></span>კ. ი-ო</div>
+          <div class="admin-card-title"><span class="dot"></span>კომპანიის ინფორმაცია</div>
           <div class="fields-2col">
             <div class="field-group">
               <label class="field-label">კ. სახ.</label>
@@ -464,51 +464,51 @@
               <input class="field-input" id="s_website" value="https://smartsecurity.com.ge"/>
             </div>
             <div class="field-group">
-              <label class="field-label">📞 ტ-ი #1</label>
+              <label class="field-label">📞 ტელეფონი #1</label>
               <input class="field-input" id="s_phone1" value="+995 595 70 83 00"/>
             </div>
             <div class="field-group">
-              <label class="field-label">📞 ტ-ი #2 (ო-ი)</label>
-              <input class="field-input" id="s_phone2" placeholder="ო-ი..."/>
+              <label class="field-label">📞 ტელეფონი #2 (ოფისი)</label>
+              <input class="field-input" id="s_phone2" placeholder="ოფისი..."/>
             </div>
             <div class="field-group">
               <label class="field-label">📧 Email</label>
               <input class="field-input" id="s_email" value="info@smartsecurity.com.ge"/>
             </div>
             <div class="field-group">
-              <label class="field-label">📍 მ-ი</label>
+              <label class="field-label">📍 მისამართი</label>
               <input class="field-input" id="s_address" value="თბილისი, საქართველო"/>
             </div>
           </div>
           <div class="fields-3col" style="margin-top:8px">
             <div class="field-group">
-              <label class="field-label">✅ პ-ბი (ი-ობ.)</label>
+              <label class="field-label">✅ პროექტები (ინფობოქსი)</label>
               <input class="field-input" id="s_stat1" value="500+"/>
-              <input class="field-input" style="margin-top:8px" id="s_stat1_lbl" value="ი-ი პ."/>
+              <input class="field-input" style="margin-top:8px" id="s_stat1_lbl" value="დასრულებული პროექტი"/>
             </div>
             <div class="field-group">
-              <label class="field-label">✅ გ-ა</label>
+              <label class="field-label">✅ გარანტია</label>
               <input class="field-input" id="s_stat2" value="10+"/>
-              <input class="field-input" style="margin-top:8px" id="s_stat2_lbl" value="წ. გ-ა"/>
+              <input class="field-input" style="margin-top:8px" id="s_stat2_lbl" value="წლის გარანტია"/>
             </div>
             <div class="field-group">
-              <label class="field-label">✅ მ-ა</label>
+              <label class="field-label">✅ მხარდაჭერა</label>
               <input class="field-input" id="s_stat3" value="24/7"/>
-              <input class="field-input" style="margin-top:8px" id="s_stat3_lbl" value="მ-ა"/>
+              <input class="field-input" style="margin-top:8px" id="s_stat3_lbl" value="მხარდაჭერა"/>
             </div>
           </div>
         </div>
-        <button class="btn-save" onclick="saveSettings()">💾 შ. ი-ება localStorage-ში</button>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px">⚠️ ი-ება ბ-ი ი-ბ-ი — ი. ბ-ი-ი ყ-ა ადმ. ი-ა გ-ო-ა.</p>
+        <button class="btn-save" onclick="saveSettings()">💾 შენახვა localStorage-ში</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px">⚠️ ინახება ბრაუზერის მეხსიერებაში — ინფო ბრაუზერის გაწმენდისას ყველა ადმინ ინფო გაქრება.</p>
       </div>
 
       <!-- ── SOCIAL ── -->
       <div class="admin-page" id="page-social">
         <div class="page-header">
-          <div class="page-title">📱 სოც. ქ-ბი</div>
+          <div class="page-title">📱 სოციალური ქსელები</div>
         </div>
         <div class="admin-card">
-          <div class="admin-card-title"><span class="dot"></span>ბ-ბი</div>
+          <div class="admin-card-title"><span class="dot"></span>ბმულები</div>
           <div class="fields-2col">
             <div class="field-group">
               <label class="field-label">💙 Facebook URL</label>
@@ -535,7 +535,7 @@
               <input class="field-input" id="s_li" placeholder="https://linkedin.com/..."/>
             </div>
           </div>
-          <button class="btn-save" style="margin-top:8px" onclick="saveSocial()">💾 შ-ა</button>
+          <button class="btn-save" style="margin-top:8px" onclick="saveSocial()">💾 შენახვა</button>
         </div>
       </div>
 
@@ -543,7 +543,7 @@
   </div><!-- /admin-layout -->
 </div><!-- /adminScreen -->
 
-<div class="save-toast" id="saveToast">✅ შ-ა!</div>
+<div class="save-toast" id="saveToast">✅ შენახულია!</div>
 
 <script>
 // ════════════════════════════════════════
@@ -651,7 +651,7 @@ function saveTexts(section) {
   });
   data.editCount = (data.editCount || 0) + 1;
   localStorage.setItem(DATA_KEY, JSON.stringify(data));
-  showToast('✅ შ-ა!');
+  showToast('✅ შენახულია!');
   updateStats();
 }
 
@@ -663,7 +663,7 @@ function saveSettings() {
   });
   data.editCount = (data.editCount || 0) + 1;
   localStorage.setItem(DATA_KEY, JSON.stringify(data));
-  showToast('✅ შ-ა!');
+  showToast('✅ შენახულია!');
   updateStats();
 }
 
@@ -675,7 +675,7 @@ function saveSocial() {
   });
   data.editCount = (data.editCount || 0) + 1;
   localStorage.setItem(DATA_KEY, JSON.stringify(data));
-  showToast('✅ შ-ა!');
+  showToast('✅ შენახულია!');
 }
 
 // ════════════════════════════════════════
@@ -687,7 +687,7 @@ function renderContacts() {
   const dash = document.getElementById('dashRecentContacts');
 
   if (!contacts.length) {
-    list.innerHTML = `<div class="admin-card"><p style="color:var(--muted);font-size:14px;text-align:center;padding:20px">განაცხადები ჯ. ა. — კ. ფ-ი-ი გ-ა, ა. ი-ება.</p></div>`;
+    list.innerHTML = `<div class="admin-card"><p style="color:var(--muted);font-size:14px;text-align:center;padding:20px">განაცხადები ჯერ არ არის — კლიენტი ფორმის გამოგზავნის, აქ ინახება.</p></div>`;
     dash.innerHTML = `<p style="color:var(--muted);font-size:14px">ჯ. ა.</p>`;
     return;
   }
@@ -704,7 +704,7 @@ function renderContacts() {
       </div>
       <div class="contact-actions">
         <a class="contact-act-btn btn-wa"
-           href="https://wa.me/${(c.phone||'').replace(/\D/g,'')}?text=${encodeURIComponent('გ! Smart Security. კ-ა მ. — ' + c.name)}"
+           href="https://wa.me/${(c.phone||'').replace(/\D/g,'')}?text=${encodeURIComponent('გამარჯობა! Smart Security. კონსულტაციის მოთხოვნა — ' + c.name)}"
            target="_blank">💬 WA-ი პ.</a>
         <button class="contact-act-btn btn-del" onclick="deleteContact(${contacts.length-1-i})">🗑</button>
       </div>
@@ -729,7 +729,7 @@ function deleteContact(idx) {
 }
 
 function clearContacts() {
-  if (confirm('ყ-ა განაცხადი გ-ო?')) {
+  if (confirm('ყველა განაცხადი გასუფთავდეს?')) {
     localStorage.removeItem(CONTACTS_KEY);
     renderContacts();
     updateStats();
@@ -778,7 +778,7 @@ document.addEventListener('keydown', e => {
     else if (activePage.includes('footer'))  saveTexts('footer');
     else if (activePage.includes('settings')) saveSettings();
     else if (activePage.includes('social'))  saveSocial();
-    else showToast('ი. გ. მ. ა-ა Ctrl+S');
+    else showToast('ინფო გასანახებლად Ctrl+S');
   }
 });
 

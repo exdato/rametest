@@ -16,78 +16,60 @@
   <link rel="stylesheet" href="../css/main.css"/>
   <link rel="icon" href="../assets/favicon.svg"/>
 
-  <!-- Article Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "CCTV სახლისთვის — რამდენი კამერა, რა ფასი 2025",
-    "description": "CCTV სისტემა კერძო სახლისთვის — ექსპერტული სახელმძღვანელო",
     "author": { "@type": "Organization", "name": "Smart Security" },
     "publisher": { "@type": "Organization", "name": "Smart Security", "url": "https://smartsecurity.com.ge" },
     "datePublished": "2025-01-15",
-    "dateModified": "2025-01-15",
     "url": "https://smartsecurity.com.ge/blog/cctv-saxlistvis.html"
   }
   </script>
-
-  <!-- FAQ Schema — Google-ში კითხვა-პასუხ ბლოკი -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "რამდენი CCTV კამერა სჭირდება ჩვეულებრივ სახლს?",
-        "acceptedAnswer": { "@type": "Answer", "text": "ჩვეულებრივ 4–6 კამერა საკმარისია: მთავარი შესასვლელი (1), ეზო (1–2), გვერდითი შესასვლელები (1–2), პარკინგი (1). ობიექტის ინსპექციის შემდეგ ვიძლევით ზუსტ რეკომენდაციას." }
-      },
-      {
-        "@type": "Question",
-        "name": "CCTV სისტემა სახლისთვის რამდენი ღირს საქართველოში?",
-        "acceptedAnswer": { "@type": "Answer", "text": "4 კამერიანი სახლის სისტემა (IP NVR + 4 HD კამ. + ინსტ.) ჩვეულებრივ 500–900 ლარი ჯდება. ფასი დამოკ. კამ. კლასზე, NVR ტიპსა და ობ. სირთულეზე. უფასო ინსპ. ←" }
-      },
-      {
-        "@type": "Question",
-        "name": "შეიძლება CCTV სმარტფონიდან ყურება?",
-        "acceptedAnswer": { "@type": "Answer", "text": "დიახ, ყველა ჩვენი IP სისტემა iOS და Android App-ით — Live ვიდეო, ჩაწ. ნახვა, Push შეტყობინება 24/7." }
-      }
+      {"@type":"Question","name":"რამდენი CCTV კამერა სჭირდება ჩვეულებრივ სახლს?","acceptedAnswer":{"@type":"Answer","text":"ჩვეულებრივ 4–6 კამერა საკმარისია: მთავარი შესასვლელი, ეზო, გვერდითი შესასვლელები, პარკინგი. ობიექტის ინსპექციის შემდეგ ვიძლევით ზუსტ რეკომენდაციას."}},
+      {"@type":"Question","name":"CCTV სისტემა სახლისთვის რამდენი ღირს საქართველოში?","acceptedAnswer":{"@type":"Answer","text":"4 კამერიანი სახლის სისტემა (IP NVR + 4 HD კამერა + ინსტალაცია) ჩვეულებრივ 600–900 ლარი ჯდება. ფასი დამოკიდებულია კამერის კლასზე, NVR ტიპსა და ობიექტის სირთულეზე."}},
+      {"@type":"Question","name":"შეიძლება CCTV სმარტფონიდან ყურება?","acceptedAnswer":{"@type":"Answer","text":"დიახ, ყველა ჩვენი IP სისტემა iOS და Android აპლიკაციით — Live ვიდეო, ჩაწერის ნახვა, Push შეტყობინება 24/7."}}
     ]
   }
   </script>
 
   <style>
-    .article-wrap { max-width: 780px; margin: 0 auto; }
-    .article-hero { padding: 110px 40px 60px; background: var(--dark); border-bottom: 1px solid rgba(0,200,255,0.08); }
-    .article-body { padding: 60px 40px; background: var(--black); }
-    .article-body h2 { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--white); margin: 48px 0 16px; padding-top: 48px; border-top: 1px solid rgba(0,200,255,0.08); }
-    .article-body h2:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
-    .article-body h3 { font-size: 19px; font-weight: 700; color: var(--white); margin: 28px 0 12px; }
-    .article-body p { font-size: 16px; color: var(--muted); line-height: 1.9; margin-bottom: 18px; }
-    .article-body ul { margin: 16px 0 24px 0; display:flex; flex-direction:column; gap:10px; }
-    .article-body ul li { font-size: 15px; color: var(--muted); line-height: 1.7; padding-left: 24px; position: relative; }
-    .article-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-    .article-body strong { color: var(--white); font-weight: 700; }
-    .callout { background: var(--panel); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 20px 24px; margin: 28px 0; font-size: 15px; color: var(--white); line-height: 1.7; }
-    .callout-warn { border-left-color: var(--gold); }
-    .price-table { background: var(--panel); border: 1px solid rgba(0,200,255,0.12); border-radius: var(--radius-lg); padding: 28px; margin: 28px 0; }
-    .price-table h4 { font-family: var(--font-display); font-size: 12px; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px; }
-    .price-row { display:flex; justify-content:space-between; align-items:center; padding: 12px 0; border-bottom: 1px solid rgba(0,200,255,0.06); font-size: 14px; }
-    .price-row:last-child { border-bottom: none; }
-    .price-row .pl { color: var(--muted); }
-    .price-row .pv { color: var(--accent); font-weight: 700; font-family: var(--font-display); font-size: 16px; }
-    .article-meta { display:flex; align-items:center; gap:20px; font-size:13px; color:var(--muted); margin: 16px 0 30px; flex-wrap:wrap; }
-    .article-meta span { display:flex; align-items:center; gap:6px; }
-    .author-box { display:flex; gap:16px; align-items:center; background:var(--panel); border:1px solid rgba(0,200,255,0.1); border-radius:var(--radius-lg); padding:20px; margin:40px 0; }
-    .author-ava { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,var(--accent2),var(--accent)); display:flex;align-items:center;justify-content:center; font-size:22px;color:white;font-weight:700;flex-shrink:0; }
-    .author-name { font-weight:700; margin-bottom:4px; }
-    .author-role { font-size:13px; color:var(--muted); }
-    .toc { background:var(--panel); border:1px solid rgba(0,200,255,0.1); border-radius:var(--radius-lg); padding:24px; margin-bottom:40px; }
-    .toc h4 { font-family:var(--font-display);font-size:12px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px; }
-    .toc ol { padding-left:20px; display:flex;flex-direction:column;gap:8px; }
-    .toc a { color:var(--muted);text-decoration:none;font-size:14px; }
-    .toc a:hover { color:var(--accent); }
-    @media(max-width:600px){ .article-hero,.article-body{padding-left:20px;padding-right:20px;} }
+    .article-wrap{max-width:780px;margin:0 auto}
+    .article-hero{padding:110px 40px 60px;background:var(--dark);border-bottom:1px solid rgba(0,200,255,0.08)}
+    .article-body{padding:60px 40px;background:var(--black)}
+    .article-body h2{font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--white);margin:48px 0 16px;padding-top:48px;border-top:1px solid rgba(0,200,255,0.08)}
+    .article-body h2:first-of-type{border-top:none;margin-top:0;padding-top:0}
+    .article-body h3{font-size:19px;font-weight:700;color:var(--white);margin:28px 0 12px}
+    .article-body p{font-size:16px;color:var(--muted);line-height:1.9;margin-bottom:18px}
+    .article-body ul{margin:16px 0 24px 0;display:flex;flex-direction:column;gap:10px}
+    .article-body ul li{font-size:15px;color:var(--muted);line-height:1.7;padding-left:24px;position:relative}
+    .article-body ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700}
+    .article-body strong{color:var(--white);font-weight:700}
+    .callout{background:var(--panel);border-left:3px solid var(--accent);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin:28px 0;font-size:15px;color:var(--white);line-height:1.7}
+    .callout-warn{border-left-color:var(--gold)!important}
+    .price-table{background:var(--panel);border:1px solid rgba(0,200,255,0.12);border-radius:var(--radius-lg);padding:28px;margin:28px 0}
+    .price-table h4{font-family:var(--font-display);font-size:12px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+    .price-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,200,255,0.06);font-size:14px}
+    .price-row:last-child{border-bottom:none}
+    .price-row .pl{color:var(--muted)}
+    .price-row .pv{color:var(--accent);font-weight:700;font-family:var(--font-display);font-size:16px}
+    .article-meta{display:flex;align-items:center;gap:20px;font-size:13px;color:var(--muted);margin:16px 0 30px;flex-wrap:wrap}
+    .author-box{display:flex;gap:16px;align-items:center;background:var(--panel);border:1px solid rgba(0,200,255,0.1);border-radius:var(--radius-lg);padding:20px;margin:40px 0}
+    .author-ava{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;font-size:22px;color:white;font-weight:700;flex-shrink:0}
+    .author-name{font-weight:700;margin-bottom:4px}
+    .author-role{font-size:13px;color:var(--muted)}
+    .toc{background:var(--panel);border:1px solid rgba(0,200,255,0.1);border-radius:var(--radius-lg);padding:24px;margin-bottom:40px}
+    .toc h4{font-family:var(--font-display);font-size:12px;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+    .toc ol{padding-left:20px;display:flex;flex-direction:column;gap:8px}
+    .toc a{color:var(--muted);text-decoration:none;font-size:14px}
+    .toc a:hover{color:var(--accent)}
+    @media(max-width:600px){.article-hero,.article-body{padding-left:20px;padding-right:20px}}
   </style>
 </head>
 <body>
@@ -99,6 +81,7 @@
   <a href="index.html">ბლოგი</a>
   <a href="../index.html#contact">კონტაქტი</a>
 </div>
+
 <nav>
   <a href="../index.html" class="nav-logo"><img src="../assets/logo.svg" alt="Smart Security" style="height:38px;width:auto"/></a>
   <ul class="nav-links">
@@ -111,37 +94,40 @@
   <div class="hamburger" onclick="document.getElementById('mobileNav').classList.add('open')"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- Article Hero -->
 <div class="article-hero">
   <div class="article-wrap">
-    <div class="breadcrumb" style="display:flex;gap:8px;font-size:13px;color:var(--muted);margin-bottom:20px">
+    <div style="display:flex;gap:8px;font-size:13px;color:var(--muted);margin-bottom:20px">
       <a href="../index.html" style="color:var(--accent);text-decoration:none">Smart Security</a>
-      <span>›</span><a href="index.html" style="color:var(--accent);text-decoration:none">ბლოგი</a>
-      <span>›</span><span>CCTV სახლისთვის</span>
+      <span>›</span>
+      <a href="index.html" style="color:var(--accent);text-decoration:none">ბლოგი</a>
+      <span>›</span>
+      <span>CCTV სახლისთვის</span>
     </div>
     <div class="section-label">CCTV · სახელმძღვანელო</div>
-    <h1 style="font-family:var(--font-display);font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px">CCTV სახლისთვის — <span style="color:var(--accent)">რამდენი კამერა, რა ფასი?</span></h1>
+    <h1 style="font-family:var(--font-display);font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.15;margin-bottom:16px">
+      CCTV სახლისთვის — <span style="color:var(--accent)">რამდენი კამერა, რა ფასი?</span>
+    </h1>
     <div class="article-meta">
       <span>📅 15 იანვარი, 2025</span>
       <span>⏱ 8 წუთი</span>
       <span>✍️ Smart Security-ის ექსპერტი</span>
     </div>
-    <p style="font-size:17px;color:var(--muted);line-height:1.8">ყოველ დღე გვეკითხებიან: <em>"რამდენი კამერა მჭირდება?"</em> — ამ სტატიაში ვუპასუხებ ყველა კითხვას: კამერების რაოდენობა, ადგილმდებარეობა, ფასი, ჩაწერის ხანგრძლივობა. ყველაფერი ერთ ადგილას.</p>
+    <p style="font-size:17px;color:var(--muted);line-height:1.8">
+      ყოველ დღე გვეკითხებიან: <em>"რამდენი კამერა მჭირდება?"</em> — ამ სტატიაში ვუპასუხებ ყველა კითხვას: კამერების რაოდენობა, ადგილმდებარეობა, ფასი, ჩაწერის ხანგრძლივობა. ყველაფერი ერთ ადგილას.
+    </p>
   </div>
 </div>
 
-<!-- Article Body -->
 <div class="article-body">
   <div class="article-wrap">
 
-    <!-- ToC -->
     <div class="toc">
-      <h4>სარჩევი</h4>
+      <h4>სტატიის შინაარსი</h4>
       <ol>
         <li><a href="#ramdeni">რამდენი კამერა სჭირდება სახლს?</a></li>
         <li><a href="#sad">სად უნდა დამაგრდეს კამერები?</a></li>
         <li><a href="#tipi">რომელი კამერა ავირჩიოთ?</a></li>
-        <li><a href="#chawera">ჩაწერა — NVR, Cloud თუ SD?</a></li>
+        <li><a href="#chawera">ჩაწერა — NVR, Cloud თუ SD ბარათი?</a></li>
         <li><a href="#fasi">ღირებულება საქართველოში 2025</a></li>
         <li><a href="#faq">ხშირი კითხვები</a></li>
       </ol>
@@ -152,7 +138,7 @@
 
     <div class="price-table">
       <h4>სახლის ტიპის მიხედვით</h4>
-      <div class="price-row"><span class="pl">🏠 ბინა (2–3 ოთ.)</span><span class="pv">2–3 კამ.</span></div>
+      <div class="price-row"><span class="pl">🏠 ბინა (2–3 ოთახი)</span><span class="pv">2–3 კამ.</span></div>
       <div class="price-row"><span class="pl">🏡 კერძო სახლი (ეზოთი)</span><span class="pv">4–6 კამ.</span></div>
       <div class="price-row"><span class="pl">🏘 დიდი ვილა / კომპლექსი</span><span class="pv">8–16 კამ.</span></div>
       <div class="price-row"><span class="pl">🏢 ოფისი (150 მ²)</span><span class="pv">6–10 კამ.</span></div>
@@ -166,9 +152,9 @@
     <p><strong>სავალდებულო ადგილები:</strong></p>
     <ul>
       <li><strong>მთავარი შესასვლელი კარი</strong> — ვინც მოდის, პირი ნათლად ჩანდეს. სიმაღლე 2.5–3 მ, კუთხე 15–20°.</li>
-      <li><strong>ეზოს შესასვლელი</strong> — კარიბჭე ან მანქანის გამოსასვლელი. PTZ ან Wide-angle კამ.</li>
+      <li><strong>ეზოს შესასვლელი</strong> — კარიბჭე ან მანქანის გამოსასვლელი. PTZ ან Wide-angle კამერა.</li>
       <li><strong>გვერდითი შესასვლელები</strong> — ბაღის კარი, სარდაფი — ყველაზე ხშირი შეღწევის წერტილი.</li>
-      <li><strong>ეზოს სიღრმე</strong> — სახლის კუთხიდან Dome კამ. მთელ ეზოს ფარავს.</li>
+      <li><strong>ეზოს სიღრმე</strong> — სახლის კუთხიდან Dome კამერა მთელ ეზოს ფარავს.</li>
       <li><strong>პარკინგი</strong> — ANPR ვარიანტი ნომრის ჩასაწერად.</li>
     </ul>
 
@@ -179,72 +165,69 @@
     <h2 id="tipi">3. რომელი კამერა ავირჩიოთ?</h2>
 
     <h3>🔭 IP კამერა (ჩვენი რეკომენდაცია)</h3>
-    <p>HD–4K ხარისხი, Ethernet ან Wi-Fi კავშირი, Cloud ჩაწერა, სმარტფ. App. 2025-ში სახლისთვის <strong>IP კამერა = ოქროს სტანდარტი.</strong></p>
+    <p>HD–4K ხარისხი, Ethernet ან Wi-Fi კავშირი, Cloud ჩაწერა, სმარტფონის App. 2025-ში სახლისთვის <strong>IP კამერა = ოქროს სტანდარტი.</strong></p>
 
-    <h3>📡 Wi-Fi კამერა (მარტივი ინსტ.)</h3>
-    <p>კაბელი არ სჭირდება — ბინებისა და ბალკონებისთვის. Hikvision ColorVu 2MP Wi-Fi — ჩვენი ყველაზე პოპ. მოდელი სახლებისთვის.</p>
+    <h3>📡 Wi-Fi კამერა (მარტივი ინსტალაცია)</h3>
+    <p>კაბელი არ სჭირდება — ბინებისა და ბალკონებისთვის. Hikvision ColorVu 2MP Wi-Fi — ჩვენი ყველაზე პოპულარული მოდელი სახლებისთვის.</p>
 
-    <h3>🌙 ღამის ხედვა — Color vs IR</h3>
-    <p><strong>Full-Color (ColorVu/AcuSense)</strong> — ფერადი სურათი სიბნელეში. <strong>IR</strong> — შავ-თეთრი, მაგრამ უფრო ეკონ. კარისა და შესასვლელისთვის Full-Color — ოქრო.</p>
+    <h3>🌙 ღამის ხედვა — Full-Color vs IR</h3>
+    <p><strong>Full-Color (ColorVu/AcuSense)</strong> — ფერადი სურათი სიბნელეში. <strong>IR</strong> — შავ-თეთრი, მაგრამ უფრო ეკონომიური. კარისა და შესასვლელისთვის Full-Color — საუკეთესო არჩევანი.</p>
 
     <h2 id="chawera">4. ჩაწერა — NVR, Cloud თუ SD ბარათი?</h2>
-
     <ul>
-      <li><strong>NVR (ლოკ. ჩაწ.)</strong> — NVR + HDD. 4 კამ. 1TB = 30 დღე. ინტ. არ სჭირდება. ჩვენი ბაზ. რეკ.</li>
-      <li><strong>Cloud ჩაწ.</strong> — ინტ. გათ-ვის შემდეგ ჩ. ინახება. ყოველთვ. გამოწ. ✓</li>
-      <li><strong>SD ბარათი</strong> — ბიუჯ. ვარ. — 256GB = 7–14 დღე. ადვ. მოპ. ✗</li>
+      <li><strong>NVR (ლოკალური ჩაწერა)</strong> — NVR + HDD. 4 კამერა + 1TB = 30 დღე ჩაწერა. ინტერნეტი არ სჭირდება. ჩვენი ძირითადი რეკომენდაცია.</li>
+      <li><strong>Cloud ჩაწერა</strong> — ინტერნეტის გათიშვის შემდეგ ჩაწერა ინახება სერვერზე. ყოველთვიური გამოწერა.</li>
+      <li><strong>SD ბარათი</strong> — ბიუჯეტური ვარიანტი — 256GB = 7–14 დღე. ადვილად მოპარვადი, ამიტომ ნაკლებსარეზერვო.</li>
     </ul>
 
     <div class="callout">
-      💡 <strong>იდ. გამოსავ.:</strong> NVR ლოკ. ჩ-ა + Cloud სარ. — ორმ. დ. სისტ. ინფ. ვ. გათ. შ-ც ინახ.
+      💡 <strong>იდეალური გამოსავალი:</strong> NVR ლოკალური ჩაწერა + Cloud სარეზერვო — ორმაგი დაცვის სისტემა. ინფორმაცია ინტერნეტის გათიშვის შემთხვევაშიც ინახება.
     </div>
 
     <h2 id="fasi">5. ღირებულება საქართველოში 2025</h2>
 
     <div class="price-table">
-      <h4>სრული სისტემის ღირებულება (ინსტ. ჩათვ.)</h4>
+      <h4>სრული სისტემის ღირებულება (ინსტალაციით)</h4>
       <div class="price-row"><span class="pl">2 კამ. — ბინა (Wi-Fi)</span><span class="pv">350–500 ₾</span></div>
       <div class="price-row"><span class="pl">4 კამ. — სახლი (IP NVR)</span><span class="pv">600–900 ₾</span></div>
       <div class="price-row"><span class="pl">6 კამ. — სახლი + ეზო</span><span class="pv">900–1,400 ₾</span></div>
       <div class="price-row"><span class="pl">8 კამ. — ვილა / ოფისი</span><span class="pv">1,400–2,200 ₾</span></div>
-      <div class="price-row"><span class="pl">ინსტ. გარ. (1 კამ.)</span><span class="pv">30–60 ₾</span></div>
+      <div class="price-row"><span class="pl">ინსტალაცია (1 კამერა)</span><span class="pv">30–60 ₾</span></div>
     </div>
 
-    <p>ფასი მოიცავს: კამ-ებს, NVR/Cloud-ს, კაბელებს, სამ. კვეს, ინსტ., 2 წ. გარ. <strong>ჩვენ ვართ ყველაზე გამჭვირვ. ფასებით</strong> — შ-ს გარეშე.</p>
+    <p>ფასი მოიცავს: კამერებს, NVR ან Cloud-ს, კაბელებს, საკვებ წყაროს, ინსტალაციას, 2 წლის გარანტიას. <strong>ჩვენ ვართ ყველაზე გამჭვირვალე ფასებით</strong> — ფარული ხარჯი არ არსებობს.</p>
 
     <h2 id="faq">6. ხშირი კითხვები</h2>
 
-    <h3>შეიძლება CCTV-ს სმარტფ-დან ყ.?</h3>
-    <p>დიახ. ყ. ჩვ. IP სისტ. iOS + Android App-ით — Live, ჩ., Push.</p>
+    <h3>შეიძლება CCTV-ს სმარტფონიდან ყურება?</h3>
+    <p>დიახ. ყველა ჩვენი IP სისტემა iOS და Android App-ით — Live ვიდეო, ჩაწერის ნახვა, Push შეტყობინება.</p>
 
-    <h3>ინტ. გარ-ა CCTV მ.?</h3>
-    <p>ლოკ. ჩ-სთ. არ სჭ. — NVR ჩ. ინახ-ა. სმ-ით ნახ-ისთ. ინტ. სჭ.</p>
+    <h3>ინტერნეტის გარეშე CCTV მუშაობს?</h3>
+    <p>ლოკალური ჩაწერისთვის ინტერნეტი არ სჭირდება — NVR ჩაწერს ადგილობრივ მყარ დისკზე. სმარტფონიდან დისტანციური ნახვისთვის ინტერნეტი საჭიროა.</p>
 
-    <h3>ვინ მ. ინსტ-ს?</h3>
-    <p>ჩვ. სერ. ინსტ-ბი. ≥10 წ. გ-ბა. 1–2 დ. ინსტ. + 2 წ. გ.</p>
+    <h3>ვინ ახდენს ინსტალაციას?</h3>
+    <p>ჩვენი სერტიფიცირებული ინსტალატორები — 10 წელზე მეტი გამოცდილება. 1–2 სამუშაო დღე, 2 წლის გარანტია.</p>
 
-    <!-- Author -->
     <div class="author-box">
       <div class="author-ava">S</div>
       <div>
-        <div class="author-name">Smart Security-ის ტექ. ექსპ.</div>
-        <div class="author-role">10+ წ. გ-ბა · 500+ პ-ი · CCTV ინსტ. სპეც.</div>
+        <div class="author-name">Smart Security-ის ტექნიკური ექსპერტი</div>
+        <div class="author-role">10+ წელი გამოცდილება · 500+ პროექტი · CCTV ინსტალაციის სპეციალისტი</div>
       </div>
     </div>
 
-    <!-- Related -->
     <div style="margin-top:40px;padding-top:40px;border-top:1px solid rgba(0,200,255,0.08)">
-      <div class="section-label">სხვა სტ-ბი</div>
+      <div class="section-label">სხვა სტატიები</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
         <a href="ip-vs-analoguri.html" style="background:var(--panel);border:1px solid rgba(0,200,255,0.1);border-radius:var(--radius-md);padding:20px;text-decoration:none;color:var(--white);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(0,200,255,0.3)'" onmouseout="this.style.borderColor='rgba(0,200,255,0.1)'">
           <div style="font-size:24px;margin-bottom:8px">🔭</div>
-          <div style="font-weight:700;font-size:14px">IP vs ანალ. კამ.</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:4px">რომელი ჯ. 2025-ში?</div>
+          <div style="font-weight:700;font-size:14px">IP vs ანალოგური კამერა</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:4px">რომელი ჯობია 2025-ში?</div>
         </a>
         <a href="../services/cctv.html" style="background:var(--panel);border:1px solid rgba(0,200,255,0.1);border-radius:var(--radius-md);padding:20px;text-decoration:none;color:var(--white);transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(0,200,255,0.3)'" onmouseout="this.style.borderColor='rgba(0,200,255,0.1)'">
           <div style="font-size:24px;margin-bottom:8px">📷</div>
-          <div style="font-weight:700;font-size:14px">CCTV სერ. გვ-ი</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:4px">ტ-ბი, შ-ბი, FAQ</div>
+          <div style="font-weight:700;font-size:14px">CCTV სერვისის გვერდი</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:4px">ტიპები, შედარება, FAQ</div>
         </a>
       </div>
     </div>
@@ -252,13 +235,12 @@
   </div>
 </div>
 
-<!-- CTA -->
 <div class="service-cta-banner">
   <div class="container" style="max-width:700px">
-    <h2>მზად ხართ CCTV-ის დასამ.?</h2>
-    <p>უფ. ინსპ. — ვ. ობ-ზე მ., ვ. შ., ვ. გ. ზ. ღ-ლ. შ-ს.</p>
+    <h2>მზად ხართ CCTV-ის დასამონტაჟებლად?</h2>
+    <p>უფასო ინსპექცია — ობიექტზე ვდივართ, ვათვალიერებთ, ვიძლევით ზუსტ ღირებულებას ფარული ხარჯების გარეშე.</p>
     <div class="cta-btns">
-      <a href="../index.html#contact" class="btn-primary">უფ. კ-ტ. →</a>
+      <a href="../index.html#contact" class="btn-primary">უფასო კონსულტაცია →</a>
       <a href="https://wa.me/995595708300" target="_blank" rel="noopener" class="btn-outline">💬 WhatsApp</a>
     </div>
   </div>
@@ -267,15 +249,15 @@
 <footer style="background:var(--panel);border-top:1px solid rgba(0,200,255,0.1);padding:30px 40px">
   <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
     <a href="../index.html" class="nav-logo"><img src="../assets/logo.svg" alt="Smart Security" style="height:32px;width:auto"/></a>
-    <p style="color:var(--muted);font-size:13px">© 2025 Smart Security.</p>
+    <p style="color:var(--muted);font-size:13px">© 2025 Smart Security. ყველა უფლება დაცულია.</p>
     <a href="index.html" class="btn-outline" style="padding:10px 20px;font-size:13px">← ბლოგი</a>
   </div>
 </footer>
 
 <script>
-window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.background=window.scrollY>50?'rgba(5,10,15,0.98)':'rgba(5,10,15,0.9)';
-},{passive:true});
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background = window.scrollY > 50 ? 'rgba(5,10,15,0.98)' : 'rgba(5,10,15,0.9)';
+}, {passive:true});
 </script>
 </body>
 </html>

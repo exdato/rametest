@@ -86,7 +86,7 @@
       "title": "დაგვიკავშირდით",
       "subtitle": "უფასო კონსულტაციისთვის დაგვიკავშირდით ან შეავსეთ ფორმა — პასუხს 24 საათში გამოგიგზავნით.",
       "phone_label": "ტელეფონი",
-      "email_label": "ელ-ფოსტა",
+      "email_label": "ელ.ფოსტა",
       "hours_label": "სამუშაო საათები",
       "hours_val": "ორშაბათი–კვირა: 09:00 – 18:00",
       "area_label": "მომსახურების ზონა",
@@ -106,6 +106,33 @@
       "col_nav": "ნავიგაცია",
       "col_contact": "კონტაქტი",
       "copyright": "ყველა უფლება დაცულია."
+    },
+    "faq": {
+      "label": "ხშირად დასმული კითხვები",
+      "title_accent": "ყველა კითხვაზე",
+      "desc": "კლიენტებს ყველაზე ხშირად სწორედ ეს კითხვები აქვთ — პასუხები გახსნილია ქვემოთ.",
+      "q1": "📷 CCTV სახლისთვის — რამდენი კამერა გჭირდება?",
+      "a1": "სტანდარტული კერძო სახლისთვის საჭიროა 4–6 კამერა: 2 წინა ეზოში, 1 უკანა ეზოში, 1 შესასვლელთან, 1 გარაჟში. ბინისთვის საკმარისია 2–3 კამერა. ზუსტი რაოდენობა დამოკიდებულია ობიექტის კონფიგურაციაზე — უფასო ინსპექციისას ზუსტ რეკომენდაციას მოგცემთ.",
+      "q2": "💰 CCTV სისტემა სახლისთვის რამდენი ღირს?",
+      "a2": "4 კამერიანი სახლის სისტემა (IP NVR + 4 HD კამერა + ინსტალაცია) ჩვეულებრივ 600–900 ლარი ჯდება. ფასი დამოკიდებულია კამერის კლასზე, NVR ტიპსა და ობიექტის სირთულეზე.",
+      "q3": "📱 სმარტფონიდან კამერების ნახვა შეიძლება?",
+      "a3": "დიახ. Hikvision iVMS-4500 და Hik-Connect მუშაობს iOS-ზეც და Android-ზეც. Live ხედვა, ჩაწერის ნახვა, Push შეტყობინება — ყველაფერი სმარტფონიდან.",
+      "q4": "⚡ სიგნალიზაციის ინსტალაცია რამდენ დღეს იღებს?",
+      "a4": "ბინის Ajax სიგნალიზაცია 1 სამუშაო დღეში სრულდება. Ajax სრულად უსადენოაა — ინსტალაცია სუფთა, კედლებს არ ბღალავს. კომერციული ობიექტისთვის 2–3 დღე.",
+      "q5": "🇬🇪 Smart Security მთელ საქართველოში მუშაობს?",
+      "a5": "დიახ. ვმუშაობთ თბილისში, ბათუმში, ქუთაისში და სხვა ქალაქებში. თბილისში — 24 საათში, სხვა ქალაქებში ვადები ინდივიდუალურად შეთანხმდება.",
+      "q6": "🛡️ გარანტია ინსტალაციაზე არის?",
+      "a6": "დიახ. ყველა ინსტალაციაზე 2 წლის გარანტია — სამონტაჟო სამუშაოზეც და მოწყობილობებზეც. გარანტიის პერიოდში გამოძახება და შეკეთება უფასოა.",
+      "q7": "🔌 ინტერნეტის გარეშე კამერები მუშაობს?",
+      "a7": "დიახ. NVR სისტემა ჩაწერს ლოკალურ მყარ დისკზე ინტერნეტის გარეშეც. ინტერნეტი საჭიროა მხოლოდ სმარტფონიდან დისტანციური ნახვისთვის.",
+      "q8": "🏢 Ajax სიგნალიზაცია ოფისისთვის გამოდგება?",
+      "a8": "სრულად. Ajax Hub 2 Plus — ოფისისა და საწარმოსთვის იდეალური სისტემა. 100 მოწყობილობამდე, Ethernet+Wi-Fi+GSM, 38 საათი ბატარეა, App iOS/Android."
+    },
+    "blog": {
+      "label": "ბლოგი და სტატიები",
+      "title": "სასარგებლო ინფორმაცია",
+      "desc": "ჩვენი სპეციალისტები წერენ სტატიებს CCTV-ის, სიგნალიზაციისა და უსაფრთხოების სისტემების შესახებ — ქართულ ენაზე.",
+      "all": "ყველა სტატიის ნახვა →"
     }
   },
   "en": {
@@ -215,6 +242,33 @@
       "col_nav": "Navigation",
       "col_contact": "Contact",
       "copyright": "All rights reserved."
+    },
+    "faq": {
+      "label": "Frequently Asked Questions",
+      "title_accent": "Every Question Answered",
+      "desc": "Our clients ask these questions most often — answers are below.",
+      "q1": "📷 How many cameras does a house need?",
+      "a1": "A standard home typically needs 4–6 cameras: 2 front yard, 1 back yard, 1 entrance, 1 garage. An apartment needs 2–3. We give an exact recommendation during our free on-site inspection.",
+      "q2": "💰 How much does a home CCTV system cost?",
+      "a2": "A 4-camera home system (IP NVR + 4 HD cameras + installation) typically costs 600–900 GEL. Price depends on camera class, NVR type and site complexity. Free inspection included.",
+      "q3": "📱 Can I watch cameras from my smartphone?",
+      "a3": "Yes. All our IP systems work with Hikvision iVMS-4500 and Hik-Connect apps on iOS and Android. Live view, playback, and Push notifications from anywhere.",
+      "q4": "⚡ How long does alarm installation take?",
+      "a4": "An Ajax apartment alarm is installed in 1 working day. Ajax is fully wireless — installation is clean and fast, no drilling walls. Commercial objects take 2–3 days.",
+      "q5": "🇬🇪 Does Smart Security work across Georgia?",
+      "a5": "Yes. We work in Tbilisi, Batumi, Kutaisi and other cities. Tbilisi — within 24 hours. Other cities — individually agreed timelines.",
+      "q6": "🛡️ Is there a warranty on installation?",
+      "a6": "Yes. 2-year warranty on all installations — both workmanship and equipment. Any technical issue during the warranty period is fixed free of charge.",
+      "q7": "🔌 Do cameras work without internet?",
+      "a7": "Yes. The NVR records to a local hard drive without internet. Internet is only needed for remote smartphone viewing and push notifications.",
+      "q8": "🏢 Is Ajax suitable for an office?",
+      "a8": "Absolutely. Ajax Hub 2 Plus is ideal for offices and businesses. Up to 100 devices, Ethernet+Wi-Fi+GSM, 38-hour battery backup, iOS/Android App."
+    },
+    "blog": {
+      "label": "Blog & Articles",
+      "title": "Useful Information",
+      "desc": "Our experts write articles about CCTV, alarms and security systems — in Georgian and English.",
+      "all": "View all articles →"
     }
   },
   "ru": {
@@ -324,6 +378,33 @@
       "col_nav": "Навигация",
       "col_contact": "Контакт",
       "copyright": "Все права защищены."
+    },
+    "faq": {
+      "label": "Часто задаваемые вопросы",
+      "title_accent": "на все вопросы",
+      "desc": "Наши клиенты чаще всего задают именно эти вопросы — ответы раскрыты ниже.",
+      "q1": "📷 Сколько камер нужно для дома?",
+      "a1": "Стандартному частному дому нужно 4–6 камер: 2 во дворе, 1 сзади, 1 у входа, 1 в гараже. Квартире достаточно 2–3. Точные рекомендации даём на бесплатном осмотре.",
+      "q2": "💰 Сколько стоит система CCTV для дома?",
+      "a2": "Система из 4 камер (IP NVR + 4 HD камеры + установка) обычно стоит 600–900 GEL. Цена зависит от класса камер, типа NVR и сложности объекта.",
+      "q3": "📱 Можно смотреть камеры со смартфона?",
+      "a3": "Да. Все наши IP-системы работают с Hikvision iVMS-4500 и Hik-Connect на iOS и Android. Прямой эфир, запись, Push-уведомления.",
+      "q4": "⚡ Сколько дней занимает установка сигнализации?",
+      "a4": "Сигнализация Ajax для квартиры устанавливается за 1 рабочий день. Ajax полностью беспроводная — монтаж чистый, без штробления. Коммерческий объект — 2–3 дня.",
+      "q5": "🇬🇪 Smart Security работает по всей Грузии?",
+      "a5": "Да. Работаем в Тбилиси, Батуми, Кутаиси и других городах. Тбилиси — в течение 24 часов. Другие города — сроки согласовываются индивидуально.",
+      "q6": "🛡️ Есть ли гарантия на установку?",
+      "a6": "Да. На все установки даём 2 года гарантии — на монтажные работы и оборудование. В период гарантии выезд и ремонт бесплатны.",
+      "q7": "🔌 Камеры работают без интернета?",
+      "a7": "Да. NVR записывает на локальный жёсткий диск без интернета. Интернет нужен только для удалённого просмотра со смартфона.",
+      "q8": "🏢 Ajax подходит для офиса?",
+      "a8": "Полностью. Ajax Hub 2 Plus — идеальная система для офиса и бизнеса. До 100 устройств, Ethernet+Wi-Fi+GSM, 38 часов аккумулятора, приложение iOS/Android."
+    },
+    "blog": {
+      "label": "Блог и статьи",
+      "title": "Полезная информация",
+      "desc": "Наши эксперты пишут статьи о CCTV, сигнализации и системах безопасности.",
+      "all": "Все статьи →"
     }
   }
 }
