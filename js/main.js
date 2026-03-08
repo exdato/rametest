@@ -384,13 +384,14 @@ function calcSelect(step, key, value) {
 
 function showCalcResult() {
   const { type, size, budget } = calcState;
+  // Prices stay in GEL regardless of language
   const results = {
-    flat:      { small:  { low:'350–500 ₾', mid:'500–700 ₾',   high:'700–1,000 ₾',    ent:'1,000+ ₾',   cams:2, title:'ბინის სისტ.',     desc:'2 Wi-Fi IP კამ. + Cloud ჩ. + App. სრ. ინ. 1 დ-ში.'  },
-                  medium: { low:'500–700 ₾', mid:'700–1,000 ₾', high:'1,000–1,400 ₾',  ent:'1,400+ ₾',   cams:4, title:'ბინის სტ. სისტ.', desc:'4 IP კამ. + NVR 1TB. PoE კ-ბ. + App.'               } },
-    house:     { small:  { low:'600–800 ₾', mid:'800–1,100 ₾', high:'1,100–1,600 ₾',  ent:'1,600+ ₾',   cams:4, title:'სახ. სისტ.',      desc:'4 IP (ColorVu) + NVR + ეზ. CCTV. 1–2 დ. ინ.'        },
-                  large:  { low:'900–1,200 ₾',mid:'1,200–1,800 ₾',high:'1,800–2,500 ₾',ent:'2,500+ ₾',  cams:8, title:'სახ. პრემ. სისტ.',desc:'6–8 IP 4K + NVR 2TB + Ajax სიგ. + App.'              } },
-    office:    { medium: { low:'800–1,200 ₾',mid:'1,200–1,800 ₾',high:'1,800–2,500 ₾',ent:'2,500+ ₾',  cams:8, title:'ოფ. სისტ.',       desc:'8 IP AI + NVR + RFID წვდ. კ. + 24/7 Alert.'         } },
-    warehouse: { large:  { low:'1,400–2,000 ₾',mid:'2,000–3,000 ₾',high:'3,000–4,500 ₾',ent:'4,500+ ₾',cams:16,title:'ინდ. სისტ.',     desc:'16+ IP 4K + AI ანალ. + ZKTeco + CAME შლ.'            } }
+    flat:      { small:  { low:'350–500 ₾', mid:'500–700 ₾',   high:'700–1,000 ₾',  ent:'1,000+ ₾',  cams:2,  titleKey:'r_flat_s_title', descKey:'r_flat_s_desc'  },
+                  medium: { low:'500–700 ₾', mid:'700–1,000 ₾', high:'1,000–1,400 ₾',ent:'1,400+ ₾',  cams:4,  titleKey:'r_flat_m_title', descKey:'r_flat_m_desc'  } },
+    house:     { small:  { low:'600–800 ₾', mid:'800–1,100 ₾', high:'1,100–1,600 ₾',ent:'1,600+ ₾',  cams:4,  titleKey:'r_house_s_title',descKey:'r_house_s_desc' },
+                  large:  { low:'900–1,200 ₾',mid:'1,200–1,800 ₾',high:'1,800–2,500 ₾',ent:'2,500+ ₾',cams:8,  titleKey:'r_house_l_title',descKey:'r_house_l_desc' } },
+    office:    { medium: { low:'800–1,200 ₾',mid:'1,200–1,800 ₾',high:'1,800–2,500 ₾',ent:'2,500+ ₾',cams:8,  titleKey:'r_office_title', descKey:'r_office_desc'  } },
+    warehouse: { large:  { low:'1,400–2,000 ₾',mid:'2,000–3,000 ₾',high:'3,000–4,500 ₾',ent:'4,500+ ₾',cams:16,titleKey:'r_warehouse_title',descKey:'r_warehouse_desc'} }
   };
 
   const sizeMap = { small:'small', medium:'medium', large:'large', xlarge:'large' };
@@ -399,16 +400,16 @@ function showCalcResult() {
   const priceEntry = bySize[budget] || bySize.mid;
   const cams = bySize.cams;
 
-  document.getElementById('calcTitle').textContent = bySize.title || 'რეკ. სისტ.';
+  document.getElementById('calcTitle').textContent = t('calc.' + bySize.titleKey) || t('calc.result_title');
   document.getElementById('calcPrice').textContent = priceEntry;
-  document.getElementById('calcDesc').textContent  = bySize.desc || '';
+  document.getElementById('calcDesc').textContent  = t('calc.' + bySize.descKey) || '';
 
   const specs = [
-    `📷 ${cams} კამ.`,
+    `📷 ${cams} ${t('calc.specs_cams')}`,
     budget === 'high' || budget === 'enterprise' ? '4K AI' : 'HD/4MP',
-    'App iOS/Android',
-    '2 წ. გ-ა',
-    'უფ. ი-ა'
+    t('calc.specs_app'),
+    t('calc.specs_warranty'),
+    t('calc.specs_inspection')
   ];
   document.getElementById('calcSpecs').innerHTML = specs.map(s =>
     `<span style="background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.2);color:var(--accent);padding:5px 14px;border-radius:100px;font-size:13px;font-weight:600">${s}</span>`
