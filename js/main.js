@@ -339,6 +339,27 @@ function initNavbarScroll() {
 }
 
 /* ================================================================
+   FAQ ACCORDION
+   ================================================================ */
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const arrow  = btn.querySelector('.faq-arr');
+  const isOpen = answer.classList.contains('open');
+
+  // Close all others
+  document.querySelectorAll('.faq-a.open').forEach(a => {
+    a.classList.remove('open');
+    a.previousElementSibling.querySelector('.faq-arr').classList.remove('open');
+  });
+
+  if (!isOpen) {
+    answer.classList.add('open');
+    arrow.classList.add('open');
+  }
+}
+window.toggleFaq = toggleFaq;
+
+/* ================================================================
    CAMERA CALCULATOR
    ================================================================ */
 const calcState = {};

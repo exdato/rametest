@@ -930,3 +930,57 @@ footer {
   from { opacity:0; transform:scale(0.85) translateY(20px); }
   to   { opacity:1; transform:scale(1)    translateY(0);    }
 }
+
+/* ─── FAQ ACCORDION ─── */
+.faq-item {
+  background: var(--panel);
+  border: 1px solid rgba(0,200,255,0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:has(.faq-a.open) { border-color: rgba(0,200,255,0.3); }
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-arr {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  line-height: 1;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  padding: 0 24px;
+}
+.faq-a.open {
+  max-height: 400px;
+  padding: 0 24px 20px;
+}
+.faq-a p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  border-top: 1px solid rgba(0,200,255,0.08);
+  padding-top: 16px;
+}
+.faq-arr.open { transform: rotate(45deg); }

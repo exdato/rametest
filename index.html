@@ -70,8 +70,9 @@
     <button class="mobile-close" onclick="closeMobileNav()">✕</button>
     <a href="#home"    onclick="closeMobileNav()"><span data-i18n="nav.home"></span></a>
     <a href="#services" onclick="closeMobileNav()"><span data-i18n="nav.services"></span></a>
+    <a href="#pricing" onclick="closeMobileNav()"><span data-i18n="nav.pricing"></span></a>
     <a href="#why"     onclick="closeMobileNav()"><span data-i18n="nav.about"></span></a>
-    <a href="#process" onclick="closeMobileNav()"><span data-i18n="nav.process"></span></a>
+    <a href="blog/index.html"><span data-i18n="nav.blog"></span></a>
     <a href="#contact" onclick="closeMobileNav()"><span data-i18n="nav.contact"></span></a>
     <div class="lang-switcher" style="margin-top:20px">
       <button class="lang-btn" data-lang="ka" onclick="setLang('ka')">🇬🇪 KA</button>
@@ -91,8 +92,9 @@
     <ul class="nav-links">
       <li><a href="#home"><span    data-i18n="nav.home"></span></a></li>
       <li><a href="#services"><span data-i18n="nav.services"></span></a></li>
+      <li><a href="#pricing"><span  data-i18n="nav.pricing"></span></a></li>
       <li><a href="#why"><span     data-i18n="nav.about"></span></a></li>
-      <li><a href="#process"><span  data-i18n="nav.process"></span></a></li>
+      <li><a href="blog/index.html"><span data-i18n="nav.blog"></span></a></li>
       <li><a href="#contact"><span  data-i18n="nav.contact"></span></a></li>
       <li><a href="tel:+995595708300" class="nav-cta"><span data-i18n="nav.cta"></span></a></li>
     </ul>
@@ -278,7 +280,7 @@
         </div>
 
       </div>
-      <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:28px">* ფასი შეიძლება განსხვავდებოდეს ობიექტის სირთ., კამ. კლასსა და ადგ-ბ-ზე. უფასო ინსპ-ი-ის შემდეგ ზუსტ ფასს გეტყვით.</p>
+      <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:28px">* ფასი შეიძლება განსხვავდებოდეს ობიექტის სირთულის, კამერის კლასისა და ადგილმდებარეობის მიხედვით. უფასო ინსპექციის შემდეგ ზუსტ ფასს გეტყვით.</p>
     </div>
   </section>
 
@@ -298,7 +300,7 @@
           <div style="font-size:13px;color:var(--accent);font-weight:700;letter-spacing:2px;margin-bottom:16px">ნაბიჯი 1 / 3</div>
           <h3 style="font-size:22px;font-weight:700;margin-bottom:28px">ობიექტის ტიპი?</h3>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-            <button class="calc-opt" onclick="calcSelect(1,'type','flat')" data-q="1">🏠<br><strong>ბინა</strong><br><span style="font-size:12px;color:var(--muted)">მრავ. სართ. კ-ი</span></button>
+            <button class="calc-opt" onclick="calcSelect(1,'type','flat')" data-q="1">🏠<br><strong>ბინა</strong><br><span style="font-size:12px;color:var(--muted)">მრავალსართულიანი კორპუსი</span></button>
             <button class="calc-opt" onclick="calcSelect(1,'type','house')" data-q="1">🏡<br><strong>კ. სახლი</strong><br><span style="font-size:12px;color:var(--muted)">ეზოთ.</span></button>
             <button class="calc-opt" onclick="calcSelect(1,'type','office')" data-q="1">🏢<br><strong>ოფ./მაღ.</strong><br><span style="font-size:12px;color:var(--muted)">კომ. ობ.</span></button>
             <button class="calc-opt" onclick="calcSelect(1,'type','warehouse')" data-q="1">🏭<br><strong>საწ./საწ.</strong><br><span style="font-size:12px;color:var(--muted)">მსხვ. ობ.</span></button>
@@ -642,6 +644,142 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       BLOG PREVIEW
+  ═══════════════════════════════════════════ -->
+  <section style="background:var(--dark);padding:80px 40px">
+    <div class="container">
+      <div class="section-label">ბლოგი და სტატიები</div>
+      <h2 class="section-title">სასარგებლო <span style="color:var(--accent)">ინფორმაცია</span></h2>
+      <p class="section-desc">ჩვენი სპეციალისტები წერენ სტატიებს CCTV-ის, სიგნალიზაციისა და უსაფრთხოების სისტემების შესახებ — ქართულ ენაზე.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:44px" class="reveal">
+
+        <a href="blog/cctv-saxlistvis.html" style="background:var(--panel);border:1px solid rgba(0,200,255,0.1);border-radius:16px;padding:28px;text-decoration:none;transition:all 0.3s;display:block" onmouseover="this.style.borderColor='rgba(0,200,255,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(0,200,255,0.1)';this.style.transform='translateY(0)'">
+          <div style="font-size:32px;margin-bottom:14px">🏠</div>
+          <div style="font-size:11px;color:var(--accent);font-weight:700;letter-spacing:2px;margin-bottom:10px">CCTV · სახლი</div>
+          <h3 style="font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:10px">CCTV კამერები სახლისთვის — სრული გზამკვლევი 2025</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">რამდენი კამერა გჭირდება? IP თუ ანალოგური? PoE თუ Wi-Fi? ყველა კითხვაზე პასუხი.</p>
+          <span style="font-size:13px;color:var(--accent);font-weight:600">წაიკითხე სტატია →</span>
+        </a>
+
+        <a href="blog/ip-vs-analoguri.html" style="background:var(--panel);border:1px solid rgba(0,200,255,0.1);border-radius:16px;padding:28px;text-decoration:none;transition:all 0.3s;display:block" onmouseover="this.style.borderColor='rgba(0,200,255,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(0,200,255,0.1)';this.style.transform='translateY(0)'">
+          <div style="font-size:32px;margin-bottom:14px">📷</div>
+          <div style="font-size:11px;color:var(--accent);font-weight:700;letter-spacing:2px;margin-bottom:10px">CCTV · შედარება</div>
+          <h3 style="font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:10px">IP კამერა vs ანალოგური — რომელი ჯობია 2025-ში?</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">ტექნიკური შედარება, ფასი, ხარისხი, AI ანალიტიკა, Cloud. ექსპერტული რეკომენდაცია.</p>
+          <span style="font-size:13px;color:var(--accent);font-weight:600">წაიკითხე სტატია →</span>
+        </a>
+
+        <a href="blog/signalizacia-binistvis.html" style="background:var(--panel);border:1px solid rgba(0,200,255,0.1);border-radius:16px;padding:28px;text-decoration:none;transition:all 0.3s;display:block" onmouseover="this.style.borderColor='rgba(0,200,255,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(0,200,255,0.1)';this.style.transform='translateY(0)'">
+          <div style="font-size:32px;margin-bottom:14px">🚨</div>
+          <div style="font-size:11px;color:var(--accent);font-weight:700;letter-spacing:2px;margin-bottom:10px">სიგნალიზაცია · შედარება</div>
+          <h3 style="font-size:17px;font-weight:700;color:var(--white);line-height:1.4;margin-bottom:10px">სიგნალიზაცია ბინისთვის — Ajax vs Paradox 2025</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Ajax Hub 2 თუ Paradox SP6000? Pet-Immunity, GSM, App, ბატარეის ხანგრძლივობა — სრული შედარება.</p>
+          <span style="font-size:13px;color:var(--accent);font-weight:600">წაიკითხე სტატია →</span>
+        </a>
+
+      </div>
+      <div style="text-align:center;margin-top:36px">
+        <a href="blog/index.html" class="btn-outline" style="padding:13px 32px;font-size:15px">ყველა სტატიის ნახვა →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ SECTION
+  ═══════════════════════════════════════════ -->
+  <section style="background:var(--black);padding:80px 40px" id="faq">
+    <div class="container" style="max-width:860px">
+      <div class="section-label">ხშირად დასმული კითხვები</div>
+      <h2 class="section-title">პასუხები <span style="color:var(--accent)">ყველა კითხვაზე</span></h2>
+      <p class="section-desc">კლიენტებს ყველაზე ხშირად სწორედ ეს კითხვები აქვთ — პასუხები გახსნილია ქვემოთ.</p>
+
+      <div style="margin-top:48px;display:flex;flex-direction:column;gap:12px" class="reveal">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>📷 CCTV სახლისთვის — რამდენი კამერა გჭირდება?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>სტანდარტული კერძო სახლისთვის საჭიროა 4–6 კამერა: 2 წინა ეზოში, 1 უკანა ეზოში, 1 შესასვლელთან, 1 გარაჟში. ბინისთვის საკმარისია 2–3 კამერა. ზუსტი რაოდენობა დამოკიდებულია ობიექტის კონფიგურაციაზე — უფასო ინსპექციისას ზუსტ რეკომენდაციას მოგცემთ.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>💰 CCTV სისტემა სახლისთვის რამდენი ღირს?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>4 კამერიანი სახლის სისტემა (IP NVR + 4 HD კამერა + ინსტალაცია) ჩვეულებრივ 600–900 ლარი ჯდება. ფასი დამოკიდებულია კამერის კლასზე, NVR ტიპსა და ობიექტის სირთულეზე. Smart Security გთავაზობთ უფასო ინსპექციას და ზუსტ კომერციულ წინადადებას.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>📱 სმარტფონიდან კამერების ნახვა შეიძლება?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>დიახ, ყველა ჩვენი IP სისტემა იძლევა სმარტფონის აპლიკაციით Live ხედვის, ჩაწერის ნახვისა და Push შეტყობინებების საშუალებას. Hikvision iVMS-4500 და Hik-Connect მუშაობს iOS-ზეც და Android-ზეც. ინტერნეტი საჭიროა მხოლოდ დისტანციური ნახვისთვის — ლოკალურ ქსელში ინტერნეტის გარეშეც მუშაობს.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>⚡ სიგნალიზაციის ინსტალაცია რამდენ დღეს იღებს?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>ბინის Ajax სიგნალიზაცია ჩვეულებრივ 1 სამუშაო დღეში სრულდება. Ajax სისტემა სრულად უსადენოა — ინსტალაცია სწრაფი და სუფთაა, კედლებს არ ბღალავს. კომერციული ობიექტისთვის 2–3 დღე. ყველა შემთხვევაში ვადებს ვინახავთ.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>🇬🇪 Smart Security მთელ საქართველოში მუშაობს?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>დიახ. ვმუშაობთ თბილისში, ბათუმში, ქუთაისში, ბოლნისში, ზუგდიდში, ქობულეთში, სტეფანწმინდაში და საქართველოს სხვა ქალაქებში. თბილისში — 24 სთ-ში ჩვენი სპეციალისტი მოვა. სხვა ქალაქებში ვადები ინდივიდუალურად შეთანხმდება.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>🛡️ გარანტია ინსტალაციაზე არის?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>დიახ. ყველა ინსტალაციაზე ვაძლევთ 2 წლის გარანტიას — როგორც სამონტაჟო სამუშაოზე, ასევე დაყენებულ მოწყობილობებზე. გარანტიის პერიოდში ნებისმიერი ტექნიკური პრობლემის შემთხვევაში გამოძახება და შეკეთება უფასოა.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>🔌 ინტერნეტის გარეშე კამერები მუშაობს?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>დიახ. NVR სისტემა ჩაწერს ლოკალურ მყარ დისკზე ინტერნეტის გარეშეც. ადგილობრივ ქსელში (LAN) ნახვა ასევე მუშაობს. ინტერნეტი საჭიროა მხოლოდ სმარტფონიდან დისტანციური ნახვისა და Push შეტყობინებებისთვის.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span>🏢 Ajax სიგნალიზაცია ოფისისთვის გამოდგება?</span>
+            <span class="faq-arr">+</span>
+          </button>
+          <div class="faq-a">
+            <p>სრულად. Ajax Hub 2 Plus — ოფისის, მაღაზიისა და საწარმოსთვის იდეალური სისტემაა. 100-მდე მოწყობილობა, Ethernet + Wi-Fi + GSM კავშირი, 38 საათის ბატარეის სარეზერვო კვება, App iOS/Android, მრავალ მომხმარებლის წვდომა. Ajax სერტიფიცირებული სპეციალისტი ვართ.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        PARTNERS
   ═══════════════════════════════════════════ -->
   <section class="partners-section">
@@ -950,24 +1088,18 @@
   checkMobileBar();
   </script>
 
-  <!-- ── Tawk.to Live Chat ─────────────────────
-       შეცვალე Property ID შენი Tawk.to ექაუნთიდან:
-       tawk.to → Admin → Property Settings → Direct Chat Link
-  ─────────────────────────────────────────────── -->
-  
+  <!-- ── Tawk.to Live Chat ── -->
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
-    s1.src='https://embed.tawk.to/69ad507c884aa31c34e84641/default'; // ← შეცვალე
+    s1.src='https://embed.tawk.to/69ad507c884aa31c34e84641/default';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
   })();
   </script>
-  
-  <!-- Tawk.to ჩართვა: წაშალე <!--  და  --> კომენტარები, ჩასვი შენი Property ID -->
   <script src="js/main.js"></script>
   <script src="js/widgets.js"></script>
 
@@ -982,7 +1114,7 @@
         "name": "CCTV სისტემა სახლისთვის საქართველოში რამდენი ღირს?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "4 კამერიანი სახლის სისტემა (IP NVR + 4 HD კამ. + ინსტ.) ჩვეულებრივ 600–900 ლარი ჯდება. ფასი დამოკ. კამ. კლასზე, NVR ტიპსა და ობ-ს სირთ-ზე. Smart Security გთავ. უფ. ინ-ს."
+          "text": "4 კამერიანი სახლის სისტემა (IP NVR + 4 HD კამერა + ინსტალაცია) ჩვეულებრივ 600–900 ლარი ჯდება. ფასი დამოკიდებულია კამერის კლასზე, NVR ტიპსა და ობიექტის სირთულეზე. Smart Security გთავაზობთ უფასო ინსპექციას."
         }
       },
       {
@@ -990,7 +1122,7 @@
         "name": "სიგნალიზაციის ინსტალაცია რამდენ დღეს იღებს?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ჩვეულებრივ 1–2 სამუშაო დღე. Ajax სის-ი — სრულად უმ-ლო, ინ-ა სწ-ა და სუ-ა."
+          "text": "ჩვეულებრივ 1–2 სამუშაო დღე. Ajax სისტემა — სრულად უსადენო, ინსტალაცია სწრაფი და სუფთა."
         }
       },
       {
@@ -998,7 +1130,7 @@
         "name": "Smart Security-ი მთელ საქართველოში მუშაობს?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "დიახ. ვ. თბ., ბ., ქ-ი, ბ-ი, ზ-ი, ქ-ი, ს-ი, ს-ი. ყ-ი ქ. — ფ-ი გ-ება ინ-ლ. ჩ-ი."
+          "text": "დიახ. ვმუშაობთ თბილისში, ბათუმში, ქუთაისში, ბოლნისში, ზუგდიდში, ქობულეთში, სტეფანწმინდაში და სხვა ქალაქებში. ყველა ქალაქი — ფასი გაიცნობება ინდივიდუალურად."
         }
       },
       {
@@ -1006,7 +1138,7 @@
         "name": "გარანტია ინსტალაციაზე არის?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "კი. 2 წლიანი გარანტია ყველა ინსტ-ზე. 24/7 ტ-ი მ-ა, სწ-ი გ-ება."
+          "text": "კი. 2 წლიანი გარანტია ყველა ინსტალაციაზე. 24/7 ტექნიკური მხარდაჭერა, სწრაფი გამოძახება."
         }
       }
     ]
