@@ -854,3 +854,79 @@ footer {
   .footer-grid  { grid-template-columns: 1fr; }
   .hero-stats   { gap: 20px; }
 }
+
+/* ─── CALCULATOR ─── */
+.calc-step { animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.calc-opt {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(0,200,255,0.12);
+  border-radius: var(--radius-lg);
+  padding: 20px 14px;
+  color: var(--white);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s;
+  line-height: 1.6;
+  text-align: center;
+}
+.calc-opt:hover  { background: rgba(0,102,255,0.12); border-color: var(--accent); transform: translateY(-2px); }
+.calc-opt.active { background: rgba(0,102,255,0.2);  border-color: var(--accent); box-shadow: 0 0 18px rgba(0,200,255,0.15); }
+
+/* ─── BEFORE / AFTER SLIDER ─── */
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  cursor: ew-resize;
+  user-select: none;
+  border: 1px solid rgba(0,200,255,0.12);
+}
+.ba-after, .ba-before {
+  position: absolute; inset: 0;
+  width: 100%;
+}
+.ba-before {
+  clip-path: inset(0 50% 0 0);
+  transition: clip-path 0.05s;
+}
+.ba-handle {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 44px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  transition: left 0.05s;
+}
+.ba-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+.ba-btn {
+  width: 40px; height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 900; color: #000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  z-index: 1;
+}
+/* Need real height for sliders */
+.ba-slider { height: 260px; }
+.ba-after > div, .ba-before > div { height: 260px !important; }
+
+/* ─── EXIT POPUP ANIMATION ─── */
+@keyframes popIn {
+  from { opacity:0; transform:scale(0.85) translateY(20px); }
+  to   { opacity:1; transform:scale(1)    translateY(0);    }
+}

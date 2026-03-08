@@ -549,7 +549,7 @@
 // ════════════════════════════════════════
 // CONFIG
 // ════════════════════════════════════════
-const ADMIN_PASSWORD = 'smartsec2025'; // ← შეცვალე!
+const ADMIN_PASSWORD = '!Ramerume1';
 const STORAGE_KEY    = 'ss_admin_auth';
 const DATA_KEY       = 'ss_admin_data';
 const CONTACTS_KEY   = 'ss_contacts';
@@ -557,24 +557,30 @@ const CONTACTS_KEY   = 'ss_contacts';
 // ════════════════════════════════════════
 // AUTH
 // ════════════════════════════════════════
+let _authed = false;
+
 function doLogin() {
   const pass = document.getElementById('loginPass').value;
   if (pass === ADMIN_PASSWORD) {
-    sessionStorage.setItem(STORAGE_KEY, '1');
+    _authed = true;
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
     showAdmin();
   } else {
     const err = document.getElementById('loginErr');
-    err.textContent = '❌ პ-ი ა-ა';
+    err.textContent = '❌ პაროლი არასწორია';
     document.getElementById('loginPass').value = '';
-    setTimeout(()=>err.textContent='', 2000);
+    setTimeout(() => err.textContent = '', 2500);
   }
 }
 function doLogout() {
-  sessionStorage.removeItem(STORAGE_KEY);
+  _authed = false;
+  try { sessionStorage.removeItem(STORAGE_KEY); } catch(e) {}
   location.reload();
 }
 function checkAuth() {
-  if (sessionStorage.getItem(STORAGE_KEY) === '1') showAdmin();
+  try {
+    if (sessionStorage.getItem(STORAGE_KEY) === '1') { _authed = true; showAdmin(); }
+  } catch(e) { /* file:// - skip */ }
 }
 
 // ════════════════════════════════════════

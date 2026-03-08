@@ -339,6 +339,108 @@ function initNavbarScroll() {
 }
 
 /* ================================================================
+   CAMERA CALCULATOR
+   ================================================================ */
+const calcState = {};
+
+function calcSelect(step, key, value) {
+  calcState[key] = value;
+  document.querySelectorAll(`[data-q="${step}"]`).forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  setTimeout(() => {
+    document.getElementById('calcStep' + step).style.display = 'none';
+    const dot = document.getElementById('dot' + step);
+    if (dot) dot.style.background = 'var(--accent)';
+    if (step < 3) {
+      document.getElementById('calcStep' + (step+1)).style.display = 'block';
+      const nd = document.getElementById('dot' + (step+1));
+      if (nd) nd.style.background = 'var(--accent)';
+    } else {
+      showCalcResult();
+    }
+  }, 350);
+}
+
+function showCalcResult() {
+  const { type, size, budget } = calcState;
+  const results = {
+    flat:      { small:  { low:'350–500 ₾', mid:'500–700 ₾',   high:'700–1,000 ₾',    ent:'1,000+ ₾',   cams:2, title:'ბინის სისტ.',     desc:'2 Wi-Fi IP კამ. + Cloud ჩ. + App. სრ. ინ. 1 დ-ში.'  },
+                  medium: { low:'500–700 ₾', mid:'700–1,000 ₾', high:'1,000–1,400 ₾',  ent:'1,400+ ₾',   cams:4, title:'ბინის სტ. სისტ.', desc:'4 IP კამ. + NVR 1TB. PoE კ-ბ. + App.'               } },
+    house:     { small:  { low:'600–800 ₾', mid:'800–1,100 ₾', high:'1,100–1,600 ₾',  ent:'1,600+ ₾',   cams:4, title:'სახ. სისტ.',      desc:'4 IP (ColorVu) + NVR + ეზ. CCTV. 1–2 დ. ინ.'        },
+                  large:  { low:'900–1,200 ₾',mid:'1,200–1,800 ₾',high:'1,800–2,500 ₾',ent:'2,500+ ₾',  cams:8, title:'სახ. პრემ. სისტ.',desc:'6–8 IP 4K + NVR 2TB + Ajax სიგ. + App.'              } },
+    office:    { medium: { low:'800–1,200 ₾',mid:'1,200–1,800 ₾',high:'1,800–2,500 ₾',ent:'2,500+ ₾',  cams:8, title:'ოფ. სისტ.',       desc:'8 IP AI + NVR + RFID წვდ. კ. + 24/7 Alert.'         } },
+    warehouse: { large:  { low:'1,400–2,000 ₾',mid:'2,000–3,000 ₾',high:'3,000–4,500 ₾',ent:'4,500+ ₾',cams:16,title:'ინდ. სისტ.',     desc:'16+ IP 4K + AI ანალ. + ZKTeco + CAME შლ.'            } }
+  };
+
+  const sizeMap = { small:'small', medium:'medium', large:'large', xlarge:'large' };
+  const r = (results[type] || results.house);
+  const bySize = r[sizeMap[size]] || r[Object.keys(r)[0]];
+  const priceEntry = bySize[budget] || bySize.mid;
+  const cams = bySize.cams;
+
+  document.getElementById('calcTitle').textContent = bySize.title || 'რეკ. სისტ.';
+  document.getElementById('calcPrice').textContent = priceEntry;
+  document.getElementById('calcDesc').textContent  = bySize.desc || '';
+
+  const specs = [
+    `📷 ${cams} კამ.`,
+    budget === 'high' || budget === 'enterprise' ? '4K AI' : 'HD/4MP',
+    'App iOS/Android',
+    '2 წ. გ-ა',
+    'უფ. ი-ა'
+  ];
+  document.getElementById('calcSpecs').innerHTML = specs.map(s =>
+    `<span style="background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.2);color:var(--accent);padding:5px 14px;border-radius:100px;font-size:13px;font-weight:600">${s}</span>`
+  ).join('');
+
+  document.getElementById('calcStep3').style.display = 'none';
+  document.getElementById('calcDots').style.display  = 'none';
+  document.getElementById('calcResult').style.display = 'block';
+}
+
+function calcReset() {
+  Object.keys(calcState).forEach(k => delete calcState[k]);
+  document.getElementById('calcResult').style.display = 'none';
+  document.getElementById('calcDots').style.display = 'flex';
+  ['calcStep2','calcStep3'].forEach(id => document.getElementById(id).style.display = 'none');
+  document.getElementById('calcStep1').style.display = 'block';
+  document.querySelectorAll('.calc-opt').forEach(b => b.classList.remove('active'));
+  ['dot2','dot3'].forEach(id => { const el=document.getElementById(id); if(el) el.style.background='rgba(0,200,255,0.2)'; });
+}
+window.calcSelect = calcSelect;
+window.calcReset  = calcReset;
+
+/* ================================================================
+   BEFORE / AFTER SLIDERS
+   ================================================================ */
+function initBASliders() {
+  ['bas1','bas2','bas3'].forEach(id => {
+    const slider  = document.getElementById(id);
+    if (!slider) return;
+    const before  = document.getElementById(id + '-before');
+    const handle  = document.getElementById(id + '-handle');
+    let dragging  = false;
+
+    function setPos(pct) {
+      pct = Math.max(5, Math.min(95, pct));
+      before.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      handle.style.left     = pct + '%';
+    }
+    function getPos(clientX) {
+      const rect = slider.getBoundingClientRect();
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    slider.addEventListener('mousedown',  e => { dragging = true; setPos(getPos(e.clientX)); });
+    slider.addEventListener('touchstart', e => { dragging = true; setPos(getPos(e.touches[0].clientX)); }, {passive:true});
+    window.addEventListener('mousemove',  e => { if (dragging) setPos(getPos(e.clientX)); });
+    window.addEventListener('touchmove',  e => { if (dragging) setPos(getPos(e.touches[0].clientX)); }, {passive:true});
+    window.addEventListener('mouseup',    () => dragging = false);
+    window.addEventListener('touchend',   () => dragging = false);
+  });
+}
+
+/* ================================================================
    13. INIT
    ================================================================ */
 document.addEventListener('DOMContentLoaded', async () => {
@@ -348,4 +450,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   initContactForm();
   initSmoothScroll();
   initNavbarScroll();
+  initBASliders();
 });
